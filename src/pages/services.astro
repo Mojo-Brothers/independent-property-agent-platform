@@ -1,0 +1,153 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { BRAND } from '../lib/constants';
+
+const services = [
+  {
+    number: '01',
+    title: 'Developer Marketing Partnership',
+    subtitle: 'Kemitraan Strategis Pemasaran Pengembang',
+    description: 'Bentuk kerja sama formal dengan pengembang perumahan atau cluster untuk mempercepat tingkat penyerapan unit. Mencakup penyusunan strategi pemasaran, distribusi informasi proyek, penyaringan prospek calon pembeli, serta koordinasi jadwal survey lokasi bersama tim sales in-house developer.',
+    points: ['Model Co-Brokering atau Exclusive Agent', 'Pelaporan prospek lead transparan', 'Sinergi promosi digital terintegrasi'],
+  },
+  {
+    number: '02',
+    title: 'New Property & Cluster Marketing',
+    subtitle: 'Pemasaran Proyek Perumahan Baru & Indent',
+    description: 'Penyajian dan promosi proyek residensial baru mulai dari tahap pre-launching hingga pembangunan fisik. Mengedukasi calon pembeli mengenai masterplan kawasan, tahapan serah terima, fasilitas perumahan, dan simulasi skema angsuran developer maupun perbankan.',
+    points: ['Penyampaian masterplan & siteplan komprehensif', 'Edukasi tahapan pembangunan & serah terima', 'Informasi promo DP 0% & subsidi biaya KPR'],
+  },
+  {
+    number: '03',
+    title: 'Ready Stock Marketing',
+    subtitle: 'Akselerasi Penjualan Unit Siap Huni',
+    description: 'Fokus pada unit-unit yang telah selesai dibangun (ready stock) baik dari sisa unit developer maupun cluster yang siap langsung ditempati. Membantu pembeli yang membutuhkan kepastian fisik bangunan dan percepatan proses akad KPR instan.',
+    points: ['Inspeksi kondisi fisik bangunan', 'Pengecekan kesiapan utilitas listrik & air', 'Percepatan proses appraisal bank untuk KPR siap huni'],
+  },
+  {
+    number: '04',
+    title: 'Residential Property Advisory',
+    subtitle: 'Konsultasi Pencarian Hunian Keluarga',
+    description: 'Pendampingan objektif bagi keluarga dan profesional yang mencari rumah tinggal pertama atau upgrade tempat tinggal. Menyelaraskan faktor jarak tempuh kerja, akses jalan tol/LRT, ketersediaan fasilitas pendidikan/kesehatan dengan alokasi budget keluarga.',
+    points: ['Analisis komparasi nilai antar-cluster', 'Pemeriksaan akses transportasi & bebas banjir', 'Pendampingan survey langsung ke lokasi'],
+  },
+  {
+    number: '05',
+    title: 'Secondary Property Marketing',
+    subtitle: 'Pemasaran Properti Sekunder / Rumah Bekas Terawat',
+    description: 'Membantu pemilik properti perorangan yang ingin menjual rumah terawat di kawasan pemukiman mapan (Kemang Pratama, Grand Wisata, Harapan Indah). Menangani penetapan harga pasar wajar, pemfilteran calon pembeli serius, hingga pendampingan ke notaris/PPAT.',
+    points: ['Estimasi harga pasar wajar (Comparative Market Analysis)', 'Verifikasi keabsahan sertifikat (SHM/HGB)', 'Pendampingan penyusunan Akta Jual Beli (AJB)'],
+  },
+  {
+    number: '06',
+    title: 'Buyer Acquisition & Lead Qualification',
+    subtitle: 'Akuisisi Calon Pembeli Berkualitas',
+    description: 'Metodologi penyaringan prospek secara ketat melalui inquiry funnel digital. Memastikan setiap calon pembeli yang dihubungkan ke pihak pengembang atau pemilik unit memiliki kapasitas finansial yang realistis dan kesiapan administratif perbankan.',
+    points: ['Pra-kualifikasi kesiapan BI Checking / SLIK', 'Penyaringan indikator budget & urgensi pembelian', 'Penjadwalan janji temu survey terkonfirmasi'],
+  },
+  {
+    number: '07',
+    title: 'Digital Property Campaign',
+    subtitle: 'Kampanye Pemasaran Digital Terukur',
+    description: 'Pemanfaatan instrumen digital mutakhir untuk menjangkau segmen pasar yang tepat. Mengombinasikan visual showcase resolusi tinggi, platform web berkecepatan edge, targeted ads, serta optimasi kata kunci pencarian properti regional Bekasi dan Cikarang.',
+    points: ['Platform website modern berbasis SEO', 'Visual presentation & digital brochure distribution', 'Pencatatan database prospek berbasis CRM'],
+  },
+];
+---
+
+<BaseLayout
+  title={`Layanan Pemasaran Properti – ${BRAND.name}`}
+  description={`Layanan profesional pemasaran properti oleh Robby Viory Fansya: Developer Marketing Partnership, Ready Stock, Residential Advisory, Secondary Property, dan Digital Performance Campaign.`}
+>
+  <!-- Header -->
+  <section class="bg-navy-950 text-white py-16 border-b border-navy-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-semibold uppercase tracking-widest text-gold-400">
+          Solusi & Kapabilitas
+        </span>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mt-2">
+          Layanan Profesional Pemasaran Properti
+        </h1>
+        <p class="text-slate-300 text-sm sm:text-base mt-3 leading-relaxed">
+          Rangkaian layanan terpadu yang dirancang untuk menjawab kebutuhan pengembang properti, investor hunian, serta calon pembeli di koridor Bekasi dan Cikarang.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Cards Grid -->
+  <section class="py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map((item) => (
+          <div class="bg-white rounded-2xl p-8 border border-slate-200/80 shadow-sm hover:shadow-card-elevated hover:border-gold-400/50 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-2xl font-black text-navy-950/20 group-hover:text-gold-500/40 font-mono">
+                  {item.number}
+                </span>
+                <span class="w-8 h-8 rounded-lg bg-navy-950 text-gold-400 flex items-center justify-center text-xs font-bold">
+                  ✓
+                </span>
+              </div>
+              
+              <h3 class="text-lg font-bold text-navy-950 mb-1">
+                {item.title}
+              </h3>
+              <p class="text-xs font-semibold text-gold-700 uppercase tracking-wider mb-3">
+                {item.subtitle}
+              </p>
+              
+              <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                {item.description}
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-slate-100">
+              <h4 class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">
+                Fokus Eksekusi:
+              </h4>
+              <ul class="space-y-1.5 text-xs text-slate-700">
+                {item.points.map((pt) => (
+                  <li class="flex items-start">
+                    <span class="text-gold-500 mr-2 font-bold">•</span>
+                    <span>{pt}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Action Box -->
+      <div class="mt-16 bg-navy-950 text-white rounded-2xl p-8 sm:p-10 border border-gold-400/30 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h3 class="text-xl font-bold">Tertarik Bermitra atau Membutuhkan Bantuan Pemasaran?</h3>
+          <p class="text-xs text-slate-300 mt-1">
+            Diskusikan kebutuhan proyek Anda bersama Robby Viory Fansya secara langsung.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-3 flex-shrink-0">
+          <a
+            href="/developer-partnership"
+            class="px-5 py-3 rounded-lg bg-gold-400 hover:bg-gold-300 text-navy-950 font-bold text-xs shadow-sm transition-all"
+          >
+            Formulir Kemitraan Developer
+          </a>
+          <a
+            href={`https://wa.me/${BRAND.whatsapp}?text=Halo%20Bpk.%20Robby,%20saya%20ingin%20berdiskusi%20tentang%20layanan%20pemasaran%20properti`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-5 py-3 rounded-lg bg-navy-900 hover:bg-navy-850 text-white border border-navy-700 text-xs font-semibold transition-all"
+          >
+            Konsultasi WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>

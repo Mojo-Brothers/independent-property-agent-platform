@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { BRAND } from '../lib/constants';
+---
+
+<BaseLayout
+  title={`Syarat & Ketentuan Layanan – ${BRAND.name}`}
+  description={`Syarat dan Ketentuan penggunaan platform digital Robby Viory Fansya sebagai Independent Property Agent.`}
+>
+  <section class="bg-navy-950 text-white py-14 border-b border-navy-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="text-xs font-semibold uppercase tracking-widest text-gold-400">Regulasi Platform</span>
+      <h1 class="text-3xl font-extrabold tracking-tight mt-1">Syarat & Ketentuan Layanan (Terms of Service)</h1>
+      <p class="text-xs text-slate-400 mt-2">Terakhir diperbarui: 19 November 2026</p>
+    </div>
+  </section>
+
+  <section class="py-14 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-slate max-w-none text-sm leading-relaxed space-y-6">
+      
+      <div>
+        <h2 class="text-lg font-bold text-navy-950 mb-2">1. Definisi & Kedudukan Hukum</h2>
+        <p>
+          Platform ini dimiliki dan dioperasikan oleh <strong>Robby Viory Fansya</strong> dalam kapasitasnya sebagai <em>Independent Property Agent</em> (IPA) perorangan. Platform ini bertindak sebagai media informasi, showcase portofolio pemasaran, dan penghubung komunikasi, bukan badan hukum pengembang properti (*developer*) pemegang hak kepemilikan tanah/bangunan proyek.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-navy-950 mb-2">2. Ketentuan Bagi Pengunjung & Calon Pembeli</h2>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>Layanan konsultasi properti dan pendampingan survey bagi calon pembeli disediakan tanpa pungutan biaya perantara tambahan (*zero buyer commission*).</li>
+          <li>Seluruh keputusan transaksi, penandatanganan Surat Pemesanan Rumah (SPR), Akta Jual Beli (AJB), maupun Perjanjian Kredit KPR merupakan kesepakatan langsung antara pembeli dan pengembang atau pemilik unit sah di hadapan Notaris/PPAT.</li>
+          <li>Pengunjung dilarang melakukan spamming data, penyisipan script berbahaya, atau pengiriman formulir dengan data kontak palsu.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-navy-950 mb-2">3. Ketentuan Kemitraan Pengembang Properti</h2>
+        <p>
+          Pengembang yang mengajukan kemitraan menyetujui bahwa informasi proyek yang diserahkan adalah benar dan sah secara hukum, memiliki perizinan yang sesuai (IMB/PBG, sertifikat induk), serta bersedia mengikat kerja sama pemasaran berdasarkan perjanjian tertulis resmi.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-navy-950 mb-2">4. Hak Kekayaan Intelektual</h2>
+        <p>
+          Seluruh elemen desain, tata letak, kode sumber, logo grafis, dan materi narasi editorial di platform ini dilindungi oleh hak cipta. Pengambilan atau publikasi ulang tanpa izin tertulis dari Robby Viory Fansya dilarang keras.
+        </p>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>

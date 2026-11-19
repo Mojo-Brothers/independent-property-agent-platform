@@ -1,0 +1,94 @@
+---
+import AdminLayout from '../../../layouts/AdminLayout.astro';
+import { DEMO_PROPERTIES } from '../../../data/mockProperties';
+
+const token = Astro.cookies.get('ipa_admin_token')?.value;
+if (!token) {
+  return Astro.redirect('/admin/login');
+}
+
+// Flatten all units from mock properties with property title attached
+const allUnits = DEMO_PROPERTIES.flatMap((p) =>
+  (p.units || []).map((u) => ({
+    ...u,
+    propertyTitle: p.title,
+    propertySlug: p.slug,
+  }))
+);
+---
+
+<AdminLayout title="Inventori Stok Unit (Inventory Matrix)" activeNav="units">
+  <div class="space-y-6 max-w-7xl mx-auto">
+    
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <div>
+        <h2 class="text-base font-bold text-navy-950">Matriks Inventori Fisik Unit</h2>
+        <p class="text-xs text-slate-500">Pantau ketersediaan nomor unit, blok, harga aktual, dan status booking real-time.</p>
+      </div>
+      <div>
+        <button
+          type="button"
+          class="px-4 py-2 bg-navy-950 hover:bg-navy-900 text-gold-300 font-bold text-xs rounded-lg transition-colors"
+          onclick="alert('Tambah Unit: Masukkan nomor unit dan harga ke tabel property_units Supabase.')"
+        >
+          + Tambah Unit Baru
+        </button>
+      </div>
+    </div>
+
+    <!-- Units Table -->
+    <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-slate-50 text-slate-700 uppercase font-bold text-[10px] tracking-wider border-b border-slate-200">
+            <tr>
+              <th class="py-3.5 px-4">Nomor Unit</th>
+              <th class="py-3.5 px-4">Blok / Sektor</th>
+              <th class="py-3.5 px-4">Nama Properti Terkait</th>
+              <th class="py-3.5 px-4">Harga Unit</th>
+              <th class="py-3.5 px-4">Status Ketersediaan</th>
+              <th class="py-3.5 px-4">Catatan Khusus</th>
+              <th class="py-3.5 px-4 text-right">Ubah Status</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            {allUnits.map((unit) => (
+              <tr class="hover:bg-slate-50/80 transition-colors">
+                <td class="py-3.5 px-4 font-bold text-navy-950">{unit.unit_number}</td>
+                <td class="py-3.5 px-4 text-slate-600">{unit.block}</td>
+                <td class="py-3.5 px-4">
+                  <a href={`/properties/${unit.propertySlug}`} target="_blank" class="text-navy-950 hover:text-gold-600 font-medium">
+                    {unit.propertyTitle}
+                  </a>
+                </td>
+                <td class="py-3.5 px-4 font-bold text-slate-900">
+                  Rp {(unit.price / 1000000).toLocaleString('id-ID')} Jt
+                </td>
+                <td class="py-3.5 px-4">
+                  <span class={`inline-block px-2.5 py-1 rounded text-[10px] font-bold ${
+                    unit.status === 'Available' ? 'bg-emerald-100 text-emerald-800' :
+                    unit.status === 'Reserved' ? 'bg-amber-100 text-amber-800' :
+                    unit.status === 'Sold' ? 'bg-rose-100 text-rose-800' : 'bg-slate-100 text-slate-700'
+                  }`}>
+                    {unit.status}
+                  </span>
+                </td>
+                <td class="py-3.5 px-4 text-slate-500 max-w-xs truncate">{unit.notes || '-'}</td>
+                <td class="py-3.5 px-4 text-right">
+                  <button
+                    type="button"
+                    class="text-gold-700 hover:text-gold-900 font-semibold underline text-[11px]"
+                    onclick="alert('Pengubahan status unit: Anda dapat memperbarui status (Available -> Reserved -> Sold) di tabel property_units Supabase.')"
+                  >
+                    Edit Status
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</AdminLayout>

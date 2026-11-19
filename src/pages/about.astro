@@ -1,0 +1,138 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { BRAND } from '../lib/constants';
+---
+
+<BaseLayout
+  title={`Tentang ${BRAND.name} – Profil & Filosofi Independent Property Agent`}
+  description={`Mengenal Robby Viory Fansya, Independent Property Agent spesialis koridor Bekasi & Cikarang. Pendekatan pemasaran properti profesional berbasis data dan integritas.`}
+>
+  <!-- Page Header -->
+  <section class="bg-navy-950 text-white py-16 border-b border-navy-800 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-semibold uppercase tracking-widest text-gold-400">
+          Profil Profesional
+        </span>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mt-2">
+          Tentang {BRAND.name}
+        </h1>
+        <p class="text-slate-300 text-sm sm:text-base mt-3 leading-relaxed">
+          {BRAND.title} yang berdedikasi membangun sinergi pemasaran properti berorientasi data antara pengembang perumahan dan masyarakat di wilayah Kota Bekasi, Kabupaten Bekasi, Cikarang, dan sekitarnya.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Narrative & Background Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Left Column: Identity Card & Key Principles -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="bg-navy-950 text-white rounded-2xl p-8 border border-gold-400/30 shadow-xl relative overflow-hidden">
+            <div class="w-20 h-20 rounded-full bg-navy-900 border-2 border-gold-400 flex items-center justify-center text-gold-400 text-2xl font-bold mb-4">
+              RVF
+            </div>
+            <h2 class="text-2xl font-bold text-white">{BRAND.name}</h2>
+            <p class="text-xs font-semibold text-gold-400 uppercase tracking-wider mt-1">
+              {BRAND.title}
+            </p>
+            <p class="text-xs text-slate-300 mt-4 leading-relaxed">
+              Berfokus pada kemitraan pemasaran proyek developer, perumahan cluster, ready stock, serta advisori properti residensial di koridor timur Jakarta (Bekasi – Cikarang).
+            </p>
+            
+            <div class="mt-6 pt-6 border-t border-navy-800 space-y-2 text-xs text-slate-400">
+              <p><strong class="text-white">Wilayah Utama:</strong> Bekasi Kota, Cikarang, Tambun</p>
+              <p><strong class="text-white">Spesialisasi:</strong> Developer Partnership & Residential</p>
+              <p><strong class="text-white">Metode Kerja:</strong> Evidence-Based & Digital Funnel</p>
+            </div>
+
+            <div class="mt-6">
+              <a
+                href={`https://wa.me/${BRAND.whatsapp}?text=Halo%20Bpk.%20Robby%20Viory%20Fansya,%20saya%20ingin%20berkenalan%20dan%20berkonsultasi.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full py-2.5 px-4 rounded-lg bg-gold-400 hover:bg-gold-300 text-navy-950 font-bold text-xs text-center block transition-colors"
+              >
+                Hubungi via WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <!-- Transparency Notice -->
+          <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 space-y-2">
+            <p class="font-bold text-navy-950">Komitmen Integritas & Keterbukaan Informasi:</p>
+            <p class="leading-relaxed">
+              Platform ini dikelola dengan standar integritas penuh. Kami tidak memanipulasi klaim sertifikasi fiktif, angka penjualan yang tidak dapat dipertanggungjawabkan, maupun testimoni palsu. Seluruh data kemitraan dan listing dibangun berdasarkan izin pemasaran resmi dan bukti lapangan yang terverifikasi.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Column: Professional Background & Philosophy -->
+        <div class="lg:col-span-7 space-y-8 text-slate-700 leading-relaxed text-sm">
+          
+          <div>
+            <h3 class="text-xl font-bold text-navy-950 mb-3">
+              Latar Belakang & Pendekatan Pemasaran
+            </h3>
+            <p class="mb-4">
+              Dunia pemasaran properti kerap diwarnai oleh informasi asimetris, klaim sepihak tanpa verifikasi fisik, serta pendekatan penjualan yang berfokus semata pada komisi jangka pendek. Sebagai seorang <strong>Independent Property Agent (IPA)</strong>, Robby Viory Fansya mengadopsi cara kerja yang berbeda: mengintegrasikan riset lapangan, analisis legalitas, dan kapabilitas teknologi digital.
+            </p>
+            <p>
+              Bagi pengembang (developer), Robby bertindak sebagai mitra perpanjangan tangan yang proaktif dalam menyusun materi penawaran, mengelola kampanye pencarian pembeli potensial, serta menyediakan jalur pelaporan prospek yang transparan. Bagi calon pembeli, Robby adalah penasihat yang membantu menyaring opsi perumahan yang aman secara legalitas, realistis secara finansial, dan tepat untuk kenyamanan jangka panjang keluarga.
+            </p>
+          </div>
+
+          <div class="border-t border-slate-200 pt-6">
+            <h3 class="text-xl font-bold text-navy-950 mb-3">
+              Kapabilitas Pemasaran Digital (Digital Marketing Architecture)
+            </h3>
+            <p class="mb-4">
+              Platform ini dikembangkan secara independen menggunakan arsitektur web modern yang menjamin kecepatan, keamanan, dan visibilitas di mesin pencari. Kapabilitas digital mencakup:
+            </p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+                <h4 class="font-bold text-navy-950 text-xs uppercase text-gold-700 mb-1">Targeted Lead Funnel</h4>
+                <p class="text-xs text-slate-600">Pemanfaatan formulir inquiry terstruktur untuk menyaring pembeli serius dengan indikator budget dan tujuan pembelian yang jelas.</p>
+              </div>
+
+              <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+                <h4 class="font-bold text-navy-950 text-xs uppercase text-gold-700 mb-1">Lead CRM Management</h4>
+                <p class="text-xs text-slate-600">Pengelolaan prospek melalui sistem pencatatan status follow-up (*Contacted, Qualified, Negotiation, Converted*) secara terpadu.</p>
+              </div>
+
+              <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+                <h4 class="font-bold text-navy-950 text-xs uppercase text-gold-700 mb-1">Optimasi SEO & Performa</h4>
+                <p class="text-xs text-slate-600">Penyusunan structured data real estate (JSON-LD) dan kecepatan akses edge global guna memastikan unit mudah ditemukan calon konsumen.</p>
+              </div>
+
+              <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+                <h4 class="font-bold text-navy-950 text-xs uppercase text-gold-700 mb-1">Penyajian Visual Elegan</h4>
+                <p class="text-xs text-slate-600">Dokumentasi fotografi dan spesifikasi teknis unit yang tertata rapi, transparan, dan mudah dibaca melalui perangkat mobile.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="border-t border-slate-200 pt-6">
+            <h3 class="text-xl font-bold text-navy-950 mb-3">
+              Visi Pengembangan Bisnis Properti
+            </h3>
+            <p class="mb-3">
+              Visi Robby Viory Fansya adalah menjadikan entitas ini sebagai rujukan konsultan properti independen terkemuka di kawasan Bekasi dan Cikarang yang dipercaya oleh institusi pengembang terkemuka (seperti PT Pos Properti Indonesia, konsorsium swasta, maupun developer lokal) serta dihargai oleh para pencari hunian karena kejujuran informasi.
+            </p>
+            <p>
+              Secara bertahap, platform ini terus diperluas dengan otomasi inventori, analitik pergerakan harga properti koridor timur Jakarta, serta kemudahan simulasi pembiayaan perbankan.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>

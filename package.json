@@ -1,0 +1,34 @@
+{
+  "name": "independent-property-agent-platform",
+  "version": "1.0.0",
+  "description": "Digital Business Platform & Portfolio for Robby Viory Fansya - Independent Property Agent",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "build:fast": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/cloudflare": "^12.2.0",
+    "@astrojs/tailwind": "^5.1.5",
+    "@lucide/astro": "^1.76.0",
+    "@supabase/supabase-js": "^2.48.1",
+    "astro": "^5.3.0",
+    "clsx": "^2.1.1",
+    "lucide-astro": "^0.556.0",
+    "tailwind-merge": "^3.0.1",
+    "typescript": "^5.7.3",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16",
+    "@types/node": "^22.13.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.2",
+    "tailwindcss": "^3.4.17"
+  }
+}

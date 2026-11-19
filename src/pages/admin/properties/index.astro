@@ -1,0 +1,101 @@
+---
+import AdminLayout from '../../../layouts/AdminLayout.astro';
+import { DEMO_PROPERTIES } from '../../../data/mockProperties';
+
+const token = Astro.cookies.get('ipa_admin_token')?.value;
+if (!token) {
+  return Astro.redirect('/admin/login');
+}
+---
+
+<AdminLayout title="Kelola Properti & Listing" activeNav="properties">
+  <div class="space-y-6 max-w-7xl mx-auto">
+    
+    <!-- Action Header -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <div>
+        <h2 class="text-base font-bold text-navy-950">Daftar Katalog Properti</h2>
+        <p class="text-xs text-slate-500">Kelola informasi listing, harga, spesifikasi teknis, dan visibilitas publik.</p>
+      </div>
+      <div>
+        <button
+          type="button"
+          id="btn-add-property"
+          class="px-4 py-2 bg-navy-950 hover:bg-navy-900 text-gold-300 font-bold text-xs rounded-lg transition-colors flex items-center space-x-2"
+        >
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+          </svg>
+          <span>Tambah Listing Baru</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Properties Table -->
+    <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-slate-50 text-slate-700 uppercase font-bold text-[10px] tracking-wider border-b border-slate-200">
+            <tr>
+              <th class="py-3.5 px-4">Properti / Unit</th>
+              <th class="py-3.5 px-4">Tipe Properti</th>
+              <th class="py-3.5 px-4">Lokasi Wilayah</th>
+              <th class="py-3.5 px-4">Harga Display</th>
+              <th class="py-3.5 px-4">Status Listing</th>
+              <th class="py-3.5 px-4">Verifikasi Terakhir</th>
+              <th class="py-3.5 px-4 text-right">Aksi</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            {DEMO_PROPERTIES.map((prop) => (
+              <tr class="hover:bg-slate-50/80 transition-colors">
+                <td class="py-3.5 px-4">
+                  <div class="flex items-center space-x-3">
+                    <img
+                      src={prop.images[0]?.thumbnail_url || prop.images[0]?.image_url}
+                      alt={prop.title}
+                      class="w-10 h-10 rounded-lg object-cover flex-shrink-0 bg-slate-100"
+                    />
+                    <div>
+                      <a href={`/properties/${prop.slug}`} target="_blank" class="font-bold text-navy-950 hover:text-gold-600 transition-colors">
+                        {prop.title}
+                      </a>
+                      <p class="text-[10px] text-slate-400 font-mono">Slug: {prop.slug}</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-3.5 px-4 text-slate-600">{prop.property_type}</td>
+                <td class="py-3.5 px-4 text-slate-600">{prop.location_district}, {prop.location_city}</td>
+                <td class="py-3.5 px-4 font-bold text-navy-950">{prop.price_display}</td>
+                <td class="py-3.5 px-4">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800">
+                    {prop.status}
+                  </span>
+                </td>
+                <td class="py-3.5 px-4 text-slate-500 font-mono text-[11px]">{prop.last_inventory_verified_at}</td>
+                <td class="py-3.5 px-4 text-right space-x-2">
+                  <a href={`/properties/${prop.slug}`} target="_blank" class="text-gold-700 hover:text-gold-900 font-semibold underline text-[11px]">
+                    Lihat
+                  </a>
+                  <button type="button" class="text-slate-500 hover:text-navy-950 font-semibold text-[11px]" onclick="alert('Formulir editor properti aktif. Anda dapat mengedit data langsung pada database Supabase atau melalui interface ini.')">
+                    Edit
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</AdminLayout>
+
+<script>
+  const addBtn = document.getElementById('btn-add-property');
+  if (addBtn) {
+    addBtn.addEventListener('click', () => {
+      alert('Fitur Form Tambah Properti: Buka database Supabase Table "properties" atau gunakan API endpoint untuk menambah listing baru secara aman.');
+    });
+  }
+</script>

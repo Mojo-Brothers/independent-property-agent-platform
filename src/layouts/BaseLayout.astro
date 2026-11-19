@@ -1,0 +1,91 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppFloating from '../components/WhatsAppFloating.astro';
+import { BRAND } from '../lib/constants';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: string;
+}
+
+const {
+  title = `${BRAND.name} – ${BRAND.title} | Spesialis Properti Bekasi & Cikarang`,
+  description = `${BRAND.tagline}. Portofolio kemitraan developer dan katalog perumahan baru, cluster, ready stock, serta properti sekunder di koridor strategis Bekasi–Cikarang.`,
+  image = 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
+  type = 'website',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://robbyvioryfansya.pages.dev');
+
+// Structured Data (JSON-LD) for RealEstateAgent / Independent Property Agent
+const schemaData = {
+  '@context': 'https://schema.org',
+  '@type': 'RealEstateAgent',
+  name: BRAND.name,
+  description: description,
+  url: canonicalURL.toString(),
+  telephone: BRAND.phone,
+  email: BRAND.email,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Bekasi',
+    addressRegion: 'Jawa Barat',
+    addressCountry: 'ID',
+  },
+  areaServed: [
+    'Kota Bekasi',
+    'Kabupaten Bekasi',
+    'Cikarang',
+    'Grand Wisata Tambun',
+    'Summarecon Bekasi',
+    'Harapan Indah',
+  ],
+  priceRange: 'Rp 500 Juta - Rp 5 Miliar',
+};
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="author" content={BRAND.name} />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image} />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  </head>
+  <body class="min-h-screen flex flex-col bg-slate-50 text-slate-900 antialiased selection:bg-gold-400 selection:text-navy-950">
+    <Header />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
+    <WhatsAppFloating />
+  </body>
+</html>

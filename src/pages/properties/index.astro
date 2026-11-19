@@ -1,0 +1,215 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PropertyCard from '../../components/PropertyCard.astro';
+import InquiryModal from '../../components/InquiryModal.astro';
+import { DEMO_PROPERTIES } from '../../data/mockProperties';
+import { PROPERTY_LOCATIONS, PROPERTY_TYPES, BRAND } from '../../lib/constants';
+
+// Handle filter parameters from URL
+const url = Astro.url;
+const locationParam = url.searchParams.get('location') || '';
+const typeParam = url.searchParams.get('type') || '';
+const priceParam = url.searchParams.get('price') || '';
+const searchParam = url.searchParams.get('q') || '';
+
+const filteredProperties = DEMO_PROPERTIES.filter((item) => {
+  // Location filter
+  if (locationParam && locationParam !== 'Semua Lokasi') {
+    const locMatch =
+      item.location_city.toLowerCase().includes(locationParam.toLowerCase()) ||
+      item.location_district.toLowerCase().includes(locationParam.toLowerCase()) ||
+      item.address_short.toLowerCase().includes(locationParam.toLowerCase());
+    if (!locMatch) return false;
+  }
+
+  // Type filter
+  if (typeParam && typeParam !== 'Semua Tipe') {
+    if (item.property_type !== typeParam) return false;
+  }
+
+  // Price filter
+  if (priceParam) {
+    if (priceParam === '500jt' && item.price_min >= 500000000) return false;
+    if (priceParam === '500jt-1m' && (item.price_min < 500000000 || item.price_min > 1000000000)) return false;
+    if (priceParam === '1m-2m' && (item.price_min < 1000000000 || item.price_min > 2000000000)) return false;
+    if (priceParam === '2m' && item.price_min < 2000000000) return false;
+  }
+
+  // Text search
+  if (searchParam) {
+    const q = searchParam.toLowerCase();
+    const titleMatch = item.title.toLowerCase().includes(q);
+    const descMatch = item.description.toLowerCase().includes(q);
+    if (!titleMatch && !descMatch) return false;
+  }
+
+  return true;
+});
+---
+
+<BaseLayout
+  title={`Katalog Listing Properti – ${BRAND.name}`}
+  description={`Katalog perumahan baru, cluster, ready stock, ruko komersial, dan rumah sekunder di Bekasi & Cikarang. Data spesifikasi riil dan status stok fisik terverifikasi.`}
+>
+  <!-- Header -->
+  <section class="bg-navy-950 text-white py-14 border-b border-navy-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-semibold uppercase tracking-widest text-gold-400">
+          Katalog Portofolio
+        </span>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mt-2">
+          Listing Properti Bekasi & Cikarang
+        </h1>
+        <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+          Temukan hunian idaman atau aset komersial dengan spesifikasi transparan. Seluruh listing berstatus demo/preview dilengkapi tanggal verifikasi inventori terbaru.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter & Search Toolbar -->
+  <section class="bg-white border-b border-slate-200 py-6 sticky top-20 z-30 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <form method="GET" action="/properties" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+        
+        <!-- Text Search -->
+        <div>
+          <label for="q" class="sr-only">Cari Properti</label>
+          <input
+            type="text"
+            id="q"
+            name="q"
+            value={searchParam}
+            placeholder="Cari nama cluster / jalan..."
+            class="w-full px-3.5 py-2.5 border border-slate-300 rounded-lg text-xs focus:ring-2 focus:ring-gold-400 focus:border-gold-400 outline-none"
+          />
+        </div>
+
+        <!-- Location Filter -->
+        <div>
+          <label for="location" class="sr-only">Wilayah</label>
+          <select
+            id="location"
+            name="location"
+            class="w-full px-3.5 py-2.5 border border-slate-300 rounded-lg text-xs focus:ring-2 focus:ring-gold-400 focus:border-gold-400 outline-none bg-white"
+          >
+            {PROPERTY_LOCATIONS.map((loc) => (
+              <option value={loc === 'Semua Lokasi' ? '' : loc} selected={locationParam === loc || (loc === 'Semua Lokasi' && !locationParam)}>
+                {loc}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <!-- Property Type Filter -->
+        <div>
+          <label for="type" class="sr-only">Tipe Properti</label>
+          <select
+            id="type"
+            name="type"
+            class="w-full px-3.5 py-2.5 border border-slate-300 rounded-lg text-xs focus:ring-2 focus:ring-gold-400 focus:border-gold-400 outline-none bg-white"
+          >
+            {PROPERTY_TYPES.map((t) => (
+              <option value={t === 'Semua Tipe' ? '' : t} selected={typeParam === t || (t === 'Semua Tipe' && !typeParam)}>
+                {t}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <!-- Price Range Filter -->
+        <div>
+          <label for="price" class="sr-only">Kisaran Harga</label>
+          <select
+            id="price"
+            name="price"
+            class="w-full px-3.5 py-2.5 border border-slate-300 rounded-lg text-xs focus:ring-2 focus:ring-gold-400 focus:border-gold-400 outline-none bg-white"
+          >
+            <option value="" selected={!priceParam}>Semua Harga</option>
+            <option value="500jt" selected={priceParam === '500jt'}>&lt; Rp 500 Juta</option>
+            <option value="500jt-1m" selected={priceParam === '500jt-1m'}>Rp 500 Juta - Rp 1 Miliar</option>
+            <option value="1m-2m" selected={priceParam === '1m-2m'}>Rp 1 Miliar - Rp 2 Miliar</option>
+            <option value="2m" selected={priceParam === '2m'}>&gt; Rp 2 Miliar</option>
+          </select>
+        </div>
+
+        <!-- Submit & Reset Buttons -->
+        <div class="flex items-center space-x-2">
+          <button
+            type="submit"
+            class="flex-1 py-2.5 px-4 bg-navy-950 hover:bg-navy-900 text-gold-300 font-bold text-xs rounded-lg transition-colors"
+          >
+            Terapkan Filter
+          </button>
+          {(locationParam || typeParam || priceParam || searchParam) && (
+            <a
+              href="/properties"
+              class="py-2.5 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg transition-colors border border-slate-200"
+              title="Reset Filter"
+            >
+              Reset
+            </a>
+          )}
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- Listing Grid Section -->
+  <section class="py-12 bg-slate-50 min-h-[50vh]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Results Count Bar -->
+      <div class="flex items-center justify-between mb-8 pb-4 border-b border-slate-200 text-xs text-slate-500">
+        <p>
+          Menampilkan <strong class="text-navy-950 font-bold">{filteredProperties.length}</strong> unit properti
+          {(locationParam || typeParam || priceParam || searchParam) && ' yang sesuai dengan kriteria filter.'}
+        </p>
+        <span class="text-slate-400 hidden sm:inline">
+          Seluruh unit demo dilengkapi catatan verifikasi
+        </span>
+      </div>
+
+      {filteredProperties.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProperties.map((property) => (
+            <PropertyCard property={property} />
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-20 bg-white rounded-2xl border border-slate-200 p-8">
+          <div class="w-16 h-16 rounded-full bg-slate-100 text-slate-400 mx-auto flex items-center justify-center mb-4">
+            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-navy-950">Tidak Ditemukan Properti yang Cocok</h3>
+          <p class="text-xs text-slate-500 mt-2 max-w-md mx-auto">
+            Coba sesuaikan pilihan filter wilayah atau kisaran budget Anda, atau hubungi Bpk. Robby Viory Fansya langsung untuk mencari unit yang belum dipublikasikan.
+          </p>
+          <div class="mt-6">
+            <a
+              href="/properties"
+              class="inline-flex items-center px-4 py-2 text-xs font-bold rounded-lg bg-navy-950 text-gold-300 hover:bg-navy-900 transition-colors"
+            >
+              Reset Semua Filter
+            </a>
+          </div>
+        </div>
+      )}
+
+      <!-- Disclaimer Footer Notice -->
+      <div class="mt-14 p-5 rounded-xl bg-slate-100 border border-slate-200 text-xs text-slate-600">
+        <p class="font-bold text-navy-950 mb-1">Catatan Penting Calon Pembeli Properti:</p>
+        <p class="leading-relaxed">
+          Harga yang tertera merupakan harga acuan per tanggal verifikasi terakhir dan dapat berubah tergantung kebijakan pengembang atau negosiasi pemilik unit. Ketersediaan unit pada tabel unit (Available, Reserved, Sold) wajib dikonfirmasi terlebih dahulu sebelum melakukan transfer tanda jadi / booking fee.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <InquiryModal />
+</BaseLayout>

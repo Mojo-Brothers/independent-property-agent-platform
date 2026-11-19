@@ -1,0 +1,128 @@
+---
+import { BRAND, NAV_LINKS } from '../lib/constants';
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-navy-950 text-slate-400 border-t border-navy-800 text-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      
+      <!-- Brand & Profile Statement -->
+      <div class="space-y-4">
+        <div class="flex items-center space-x-3">
+          <div class="w-9 h-9 rounded-md bg-navy-900 border border-gold-400/30 flex items-center justify-center text-gold-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-white tracking-wide">{BRAND.name}</h3>
+            <p class="text-xs text-gold-400 font-medium uppercase tracking-wider">{BRAND.title}</p>
+          </div>
+        </div>
+        <p class="text-slate-400 text-xs leading-relaxed">
+          Mitra profesional pemasaran properti independen berorientasi data. Menghubungkan pengembang properti terpercaya dengan pembeli cerdas di koridor pertumbuhan Bekasi dan Cikarang.
+        </p>
+        <div class="text-xs text-slate-500 pt-2">
+          <span class="inline-block px-2.5 py-1 rounded bg-navy-900 border border-navy-800 text-gold-400/90 font-mono">
+            Evidence-Based Property Marketing
+          </span>
+        </div>
+      </div>
+
+      <!-- Quick Navigation -->
+      <div>
+        <h4 class="text-sm font-semibold text-white tracking-wider uppercase mb-4 border-b border-navy-800 pb-2">
+          Navigasi Utama
+        </h4>
+        <ul class="space-y-2.5">
+          {NAV_LINKS.map((link) => (
+            <li>
+              <a href={link.href} class="hover:text-gold-400 transition-colors text-xs flex items-center">
+                <span class="mr-1.5 text-gold-500/60">›</span> {link.label}
+              </a>
+            </li>
+          ))}
+          <li>
+            <a href="/disclaimer" class="hover:text-gold-400 transition-colors text-xs flex items-center">
+              <span class="mr-1.5 text-gold-500/60">›</span> Disclaimer Listing
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Focus Market Areas -->
+      <div>
+        <h4 class="text-sm font-semibold text-white tracking-wider uppercase mb-4 border-b border-navy-800 pb-2">
+          Fokus Koridor Pemasaran
+        </h4>
+        <ul class="space-y-2 text-xs">
+          <li class="flex items-start">
+            <span class="text-gold-400 mr-2 font-bold">•</span>
+            <span><strong>Kota Bekasi:</strong> Summarecon, Medan Satria, Harapan Indah, Rawalumbu, Kemang Pratama</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-gold-400 mr-2 font-bold">•</span>
+            <span><strong>Kabupaten Bekasi:</strong> Cikarang Selatan, Cikarang Pusat, Deltamas, Lippo Cikarang</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-gold-400 mr-2 font-bold">•</span>
+            <span><strong>Koridor Tol Cikampek:</strong> Grand Wisata Tambun, Cibitung, Tambun Selatan</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Official Contact & Admin Access -->
+      <div class="space-y-4">
+        <h4 class="text-sm font-semibold text-white tracking-wider uppercase mb-4 border-b border-navy-800 pb-2">
+          Saluran Komunikasi
+        </h4>
+        <p class="text-xs text-slate-400">
+          Konsultasi ketersediaan unit, penjadwalan survey lokasi, atau pengajuan presentasi developer:
+        </p>
+        <div class="space-y-2 text-xs">
+          <p class="flex items-center text-slate-300">
+            <span class="text-gold-400 mr-2">WhatsApp:</span> {BRAND.phone}
+          </p>
+          <p class="flex items-center text-slate-300">
+            <span class="text-gold-400 mr-2">Email:</span> {BRAND.email}
+          </p>
+          <p class="text-slate-400 text-[11px] leading-relaxed pt-1">
+            {BRAND.address}
+          </p>
+        </div>
+        <div class="pt-2">
+          <a
+            href="/admin/login"
+            class="text-[11px] text-slate-500 hover:text-gold-400/80 transition-colors inline-flex items-center"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+            Portal Administrasi IPA (Internal)
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Legal Disclaimer Notice -->
+    <div class="mt-12 pt-6 border-t border-navy-900/80 text-[11px] leading-relaxed text-slate-500 bg-navy-900/30 p-4 rounded-lg">
+      <p class="mb-2 font-medium text-slate-400">Pernyataan Transparansi & Legalitas:</p>
+      <p>
+        Robby Viory Fansya bertindak sebagai <em>Independent Property Agent</em> (IPA) dan bukan pengembang properti. Seluruh informasi harga, simulasi angsuran, promosi developer, dan ketersediaan stok fisik unit yang tercantum di situs ini bersifat indikatif dan wajib dikonfirmasi ulang saat penjadwalan survey atau penerbitan Surat Pesanan. Gambar berlabel <span class="text-gold-400 font-semibold">[DEMO]</span> adalah representasi portofolio arsitektural.
+      </p>
+    </div>
+
+    <!-- Copyright and Policies -->
+    <div class="mt-8 pt-6 border-t border-navy-900 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 space-y-3 sm:space-y-0">
+      <p>© {currentYear} {BRAND.name}. Hak Cipta Dilindungi Undang-Undang.</p>
+      <div class="flex items-center space-x-6">
+        <a href="/privacy-policy" class="hover:text-gold-400 transition-colors">Kebijakan Privasi</a>
+        <a href="/terms" class="hover:text-gold-400 transition-colors">Syarat & Ketentuan</a>
+        <a href="/disclaimer" class="hover:text-gold-400 transition-colors">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>

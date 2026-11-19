@@ -1,0 +1,25 @@
+# Build & Dependency Outputs
+node_modules/
+dist/
+.astro/
+
+# Environment Variables
+.env
+.env.local
+.env.production
+.env.development
+!.env.example
+
+# OS and Editor metadata
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Cloudflare & Supabase temp
+.wrangler/
+.supabase/

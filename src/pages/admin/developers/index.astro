@@ -1,0 +1,101 @@
+---
+import AdminLayout from '../../../layouts/AdminLayout.astro';
+
+const token = Astro.cookies.get('ipa_admin_token')?.value;
+if (!token) {
+  return Astro.redirect('/admin/login');
+}
+
+// Structured developer data pipeline
+const developers = [
+  {
+    id: 'dev-01',
+    name: 'PT Pos Properti Indonesia',
+    legal_name: 'PT Pos Properti Indonesia (Persero)',
+    pic_name: 'Direktorat Pengembangan Bisnis',
+    phone: '021-384xxxx',
+    email: 'bisnis@posproperti.co.id',
+    status: 'Pending Verification',
+    verification_notes: 'Tahap penyusunan draft proposal kemitraan pemasaran properti & presentasi konsep.',
+  },
+  {
+    id: 'dev-02',
+    name: 'Pengembang Kawasan Cikarang Mandiri',
+    legal_name: 'PT Sinergi Graha Cikarang',
+    pic_name: 'Bpk. Irwan (Head of Sales)',
+    phone: '0812-9988-xxxx',
+    email: 'marketing@sinergigraha.com',
+    status: 'Active',
+    verification_notes: 'Kerja sama Co-Brokering terkonfirmasi untuk Cluster Asteria Residence.',
+  },
+  {
+    id: 'dev-03',
+    name: 'Developer Residensial Grand Wisata',
+    legal_name: 'PT Kencana Prima Lestari',
+    pic_name: 'Ibu Maya (Marketing Coord)',
+    phone: '0813-7722-xxxx',
+    email: 'maya@kencanaprima.com',
+    status: 'Active',
+    verification_notes: 'Pemasaran unit Ready Stock Emerald Villa.',
+  },
+];
+---
+
+<AdminLayout title="Kelola Pengembang (Developers)" activeNav="developers">
+  <div class="space-y-6 max-w-7xl mx-auto">
+    
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <div>
+        <h2 class="text-base font-bold text-navy-950">Database Pengembang & Mitra Developer</h2>
+        <p class="text-xs text-slate-500">Kelola profil developer, kontak PIC, dan status verifikasi perjanjian kerja sama.</p>
+      </div>
+      <div>
+        <button
+          type="button"
+          class="px-4 py-2 bg-navy-950 hover:bg-navy-900 text-gold-300 font-bold text-xs rounded-lg transition-colors flex items-center space-x-2"
+          onclick="alert('Tambah Pengembang Baru: Masukkan data legalitas dan PIC ke tabel developers Supabase.')"
+        >
+          <span>+ Tambah Developer</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Developers Table -->
+    <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-slate-50 text-slate-700 uppercase font-bold text-[10px] tracking-wider border-b border-slate-200">
+            <tr>
+              <th class="py-3.5 px-4">Nama Developer</th>
+              <th class="py-3.5 px-4">Badan Hukum Resmi</th>
+              <th class="py-3.5 px-4">Kontak PIC</th>
+              <th class="py-3.5 px-4">Status Kemitraan</th>
+              <th class="py-3.5 px-4">Catatan Verifikasi</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            {developers.map((dev) => (
+              <tr class="hover:bg-slate-50/80 transition-colors">
+                <td class="py-3.5 px-4 font-bold text-navy-950">{dev.name}</td>
+                <td class="py-3.5 px-4 text-slate-600">{dev.legal_name}</td>
+                <td class="py-3.5 px-4">
+                  <p class="font-semibold text-slate-800">{dev.pic_name}</p>
+                  <p class="text-[10px] text-slate-500">{dev.phone} • {dev.email}</p>
+                </td>
+                <td class="py-3.5 px-4">
+                  <span class={`inline-block px-2.5 py-1 rounded text-[10px] font-bold ${
+                    dev.status === 'Active' ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'
+                  }`}>
+                    {dev.status}
+                  </span>
+                </td>
+                <td class="py-3.5 px-4 text-slate-600 max-w-xs">{dev.verification_notes}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</AdminLayout>

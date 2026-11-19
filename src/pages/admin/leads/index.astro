@@ -1,0 +1,142 @@
+---
+import AdminLayout from '../../../layouts/AdminLayout.astro';
+
+const token = Astro.cookies.get('ipa_admin_token')?.value;
+if (!token) {
+  return Astro.redirect('/admin/login');
+}
+
+const mockLeads = [
+  {
+    id: 'lead-01',
+    full_name: 'Bpk. Hendra Gunawan',
+    phone_whatsapp: '081288229911',
+    email: 'hendra.gunawan@example.com',
+    property: 'Cluster Grand Asteria Residence - Tipe 65/90',
+    budget_range: 'Rp 500 Juta - Rp 1 Miliar',
+    purchase_purpose: 'Tempat Tinggal Pribadi',
+    status: 'New',
+    created_at: '2026-11-19 10:15',
+    notes: 'Tertarik jadwal survey hari Sabtu ini, ingin tanya simulasi KPR Bank BTN/BSI.',
+  },
+  {
+    id: 'lead-02',
+    full_name: 'Ibu Ratna Dewi',
+    phone_whatsapp: '081399887766',
+    email: 'ratnadewi@example.com',
+    property: 'Ready Stock Emerald Villa - Grand Wisata Tambun',
+    budget_range: 'Rp 1 Miliar - Rp 2 Miliar',
+    purchase_purpose: 'Tempat Tinggal Pribadi',
+    status: 'Follow Up',
+    created_at: '2026-11-18 14:30',
+    notes: 'Sudah survey show unit. Sedang koordinasi kelengkapan berkas slip gaji untuk pra-kualifikasi.',
+  },
+  {
+    id: 'lead-03',
+    full_name: 'Bpk. Dimas Pratama',
+    phone_whatsapp: '087811223344',
+    email: 'dimas.p@example.com',
+    property: 'Urban Heritage Living - Harapan Indah Bekasi',
+    budget_range: 'Rp 500 Juta - Rp 1 Miliar',
+    purchase_purpose: 'Pilihan Pertama Anak',
+    status: 'Qualified',
+    created_at: '2026-11-17 09:20',
+    notes: 'BI Checking bersih, siap bayar UTJ setelah peninjauan bersama keluarga akhir pekan.',
+  },
+  {
+    id: 'lead-04',
+    full_name: 'Ibu Veronica S.',
+    phone_whatsapp: '082155667788',
+    email: 'veronica@example.com',
+    property: 'Ruko Komersial Boulevard - Cikarang Baru',
+    budget_range: 'Di atas Rp 2 Miliar',
+    purchase_purpose: 'Investasi Sewa',
+    status: 'Negotiation',
+    created_at: '2026-11-15 16:45',
+    notes: 'Diskusi skema cicilan bertahap 12x tanpa bunga dengan pengembang.',
+  },
+];
+---
+
+<AdminLayout title="Lead & Inquiry CRM Management" activeNav="leads">
+  <div class="space-y-6 max-w-7xl mx-auto">
+    
+    <!-- Top Action Card -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <div>
+        <h2 class="text-base font-bold text-navy-950">Database Prospek & Tiket Inquiry Calon Pembeli</h2>
+        <p class="text-xs text-slate-500">Pantau proses kualifikasi calon pembeli dari status New hingga Converted.</p>
+      </div>
+      <div class="flex items-center space-x-2">
+        <span class="text-xs text-slate-500">Total Prospek Aktif:</span>
+        <span class="px-2.5 py-1 bg-navy-950 text-gold-300 font-bold rounded-lg text-xs">
+          {mockLeads.length} Prospek
+        </span>
+      </div>
+    </div>
+
+    <!-- Leads Table -->
+    <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-slate-50 text-slate-700 uppercase font-bold text-[10px] tracking-wider border-b border-slate-200">
+            <tr>
+              <th class="py-3.5 px-4">Calon Pembeli</th>
+              <th class="py-3.5 px-4">Kontak WhatsApp</th>
+              <th class="py-3.5 px-4">Properti Minat</th>
+              <th class="py-3.5 px-4">Budget & Tujuan</th>
+              <th class="py-3.5 px-4">Tahapan Pipeline</th>
+              <th class="py-3.5 px-4">Catatan Follow-up</th>
+              <th class="py-3.5 px-4 text-right">Aksi</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            {mockLeads.map((lead) => (
+              <tr class="hover:bg-slate-50/80 transition-colors">
+                <td class="py-3.5 px-4">
+                  <p class="font-bold text-navy-950">{lead.full_name}</p>
+                  <p class="text-[10px] text-slate-400">{lead.email}</p>
+                  <p class="text-[10px] text-slate-400 font-mono">{lead.created_at}</p>
+                </td>
+                <td class="py-3.5 px-4">
+                  <span class="font-mono font-medium text-slate-800">{lead.phone_whatsapp}</span>
+                </td>
+                <td class="py-3.5 px-4 max-w-xs text-slate-800 font-medium">
+                  {lead.property}
+                </td>
+                <td class="py-3.5 px-4">
+                  <p class="font-bold text-navy-900">{lead.budget_range}</p>
+                  <p class="text-[10px] text-slate-500">{lead.purchase_purpose}</p>
+                </td>
+                <td class="py-3.5 px-4">
+                  <span class={`inline-block px-2.5 py-1 rounded text-[10px] font-bold ${
+                    lead.status === 'New' ? 'bg-emerald-100 text-emerald-800' :
+                    lead.status === 'Follow Up' ? 'bg-amber-100 text-amber-800' :
+                    lead.status === 'Qualified' ? 'bg-blue-100 text-blue-800' :
+                    lead.status === 'Negotiation' ? 'bg-purple-100 text-purple-800' : 'bg-slate-100 text-slate-700'
+                  }`}>
+                    {lead.status}
+                  </span>
+                </td>
+                <td class="py-3.5 px-4 text-slate-600 max-w-xs text-[11px] leading-relaxed">
+                  {lead.notes}
+                </td>
+                <td class="py-3.5 px-4 text-right">
+                  <a
+                    href={`https://wa.me/${lead.phone_whatsapp}?text=Halo%20${encodeURIComponent(lead.full_name)},%20saya%20Robby%20Viory%20Fansya%20menindaklanjuti%20inquiry%20properti%20Anda.`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center px-2.5 py-1 rounded bg-emerald-600 text-white font-bold text-[10px] hover:bg-emerald-500 transition-colors"
+                  >
+                    Chat WA
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</AdminLayout>
