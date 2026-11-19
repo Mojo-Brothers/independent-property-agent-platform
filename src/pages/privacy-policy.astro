@@ -5,13 +5,13 @@ import { BRAND } from '../lib/constants';
 
 <BaseLayout
   title={`Kebijakan Privasi – ${BRAND.name}`}
-  description={`Kebijakan Privasi perlindungan data pribadi pengunjung dan pengaju formulir properti di situs Robby Viory Fansya sesuai UU No. 27 Tahun 2022.`}
+  description={`Kebijakan Privasi perlindungan data pribadi pengunjung dan pengaju formulir properti di situs ${BRAND.name} sesuai UU No. 27 Tahun 2022.`}
 >
   <section class="bg-navy-950 text-white py-14 border-b border-navy-800">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <span class="text-xs font-semibold uppercase tracking-widest text-gold-400">Kepatuhan Hukum & Privasi</span>
-      <h1 class="text-3xl font-extrabold tracking-tight mt-1">Kebijakan Privasi (Privacy Policy)</h1>
-      <p class="text-xs text-slate-400 mt-2">Terakhir diperbarui: 19 November 2026</p>
+      <span class="text-xs font-semibold uppercase tracking-widest text-gold-400">Kepatuhan Hukum &amp; Privasi</span>
+      <h1 class="text-3xl font-serif font-extrabold tracking-tight mt-1">Kebijakan Privasi (Privacy Policy)</h1>
+      <p class="text-xs text-slate-400 mt-2 font-light">Terakhir diperbarui: 19 November 2026</p>
     </div>
   </section>
 
@@ -19,45 +19,45 @@ import { BRAND } from '../lib/constants';
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-slate max-w-none text-sm leading-relaxed space-y-6">
       
       <div>
-        <h2 class="text-lg font-bold text-navy-950 mb-2">1. Komitmen Perlindungan Data Pribadi</h2>
+        <h2 class="text-lg font-serif font-bold text-navy-950 mb-2">1. Komitmen Perlindungan Data Pribadi</h2>
         <p>
-          Robby Viory Fansya ("kami", "Independent Property Agent") berkomitmen penuh melindungi privasi data pribadi Anda saat menggunakan platform digital ini. Kebijakan ini disusun berdasarkan Undang-Undang Republik Indonesia Nomor 27 Tahun 2022 tentang Pelindungan Data Pribadi (UU PDP).
+          Manajemen <strong>{BRAND.name}</strong> ("kami", penyedia layanan <em>Property Marketing &amp; Advisory</em> di bawah naungan brand <strong>{BRAND.parentBrand}</strong>) berkomitmen penuh melindungi privasi data pribadi Anda saat menggunakan platform digital ini. Kebijakan ini disusun berdasarkan Undang-Undang Republik Indonesia Nomor 27 Tahun 2022 tentang Pelindungan Data Pribadi (UU PDP).
         </p>
       </div>
 
       <div>
-        <h2 class="text-lg font-bold text-navy-950 mb-2">2. Data yang Kami Kumpulkan</h2>
-        <p>Kami hanya mengumpulkan data yang diberikan secara sukarela oleh Anda melalui formulir inquiry, formulir kemitraan developer, atau komunikasi WhatsApp, antara lain:</p>
+        <h2 class="text-lg font-serif font-bold text-navy-950 mb-2">2. Data yang Kami Kumpulkan</h2>
+        <p>Kami hanya mengumpulkan data yang diberikan secara sukarela oleh Anda melalui formulir inquiry, formulir kemitraan pengembang, atau komunikasi WhatsApp, antara lain:</p>
         <ul class="list-disc pl-5 space-y-1">
-          <li>Identitas: Nama lengkap, alamat email, dan nomor telepon / WhatsApp.</li>
-          <li>Preferensi Properti: Alokasi budget, tujuan pembelian, unit yang diminati, dan catatan kebutuhan khusus.</li>
-          <li>Data Perusahaan (khusus formulir kemitraan): Nama badan usaha/developer, nama PIC, dan deskripsi proyek properti.</li>
-          <li>Data Teknis Otomatis: Alamat IP ter-hash (tanpa melacak identitas spesifik) dan metadata sesi untuk keamanan dari serangan bot/spam.</li>
+          <li>Identitas Kontak: Nama lengkap, alamat email resmi, dan nomor telepon / WhatsApp aktif.</li>
+          <li>Preferensi Properti: Alokasi estimasi budget, tujuan pembelian, unit yang diminati, dan catatan kriteria spesifik.</li>
+          <li>Data Perusahaan (khusus formulir kemitraan): Nama badan usaha/developer/pemilik aset, nama PIC, dan ringkasan proyek properti.</li>
+          <li>Data Teknis Otomatis: Alamat IP ter-hash (tanpa melacak identitas spesifik) dan metadata sesi untuk perlindungan dari serangan spam/bot.</li>
         </ul>
       </div>
 
       <div>
-        <h2 class="text-lg font-bold text-navy-950 mb-2">3. Tujuan Penggunaan Data</h2>
+        <h2 class="text-lg font-serif font-bold text-navy-950 mb-2">3. Tujuan Penggunaan Data</h2>
         <p>Data pribadi Anda digunakan semata-mata untuk:</p>
         <ul class="list-disc pl-5 space-y-1">
-          <li>Menghubungi Anda terkait ketersediaan unit properti dan penjadwalan survey lokasi.</li>
-          <li>Membantu proses konsultasi pra-kualifikasi perbankan (KPR) atas persetujuan tertulis Anda.</li>
-          <li>Menyampaikan materi proposal resmi kemitraan pemasaran pengembang.</li>
-          <li>Mencegah penyalahgunaan formulir dan menjaga integritas platform.</li>
+          <li>Menghubungi Anda terkait ketersediaan unit properti dan koordinasi jadwal survey lokasi.</li>
+          <li>Membantu proses konsultasi pra-kualifikasi perbankan (KPR) atas persetujuan eksplisit Anda.</li>
+          <li>Menyampaikan materi proposal resmi kemitraan pemasaran pengembang atau penasihat pemilik aset.</li>
+          <li>Mencegah penyalahgunaan formulir dan menjaga integritas platform digital.</li>
         </ul>
       </div>
 
       <div>
-        <h2 class="text-lg font-bold text-navy-950 mb-2">4. Larangan Penjualan Data ke Pihak Ketiga</h2>
+        <h2 class="text-lg font-serif font-bold text-navy-950 mb-2">4. Larangan Penjualan Data ke Pihak Ketiga</h2>
         <p>
-          Kami menegaskan bahwa data pribadi Anda <strong>tidak akan pernah dijual, disewakan, atau dipindahtangankan</strong> kepada broker liar, telemarketer eksternal, atau pihak ketiga mana pun tanpa persetujuan eksplisit Anda, kecuali diwajibkan oleh ketentuan perundang-undangan yang berlaku.
+          Kami menegaskan bahwa data pribadi Anda <strong>tidak akan pernah dijual, disewakan, atau dialihkan</strong> kepada broker pihak ketiga, telemarketer eksternal, atau entitas komersial lainnya tanpa persetujuan tertulis Anda, kecuali diwajibkan oleh ketentuan perundang-undangan yang sah di Republik Indonesia.
         </p>
       </div>
 
       <div>
-        <h2 class="text-lg font-bold text-navy-950 mb-2">5. Hak Anda atas Data Pribadi</h2>
+        <h2 class="text-lg font-serif font-bold text-navy-950 mb-2">5. Hak Anda atas Data Pribadi</h2>
         <p>
-          Sesuai UU PDP, Anda berhak meminta pembaruan data, perbaikan data yang keliru, maupun penghapusan total riwayat kontak Anda dari database kami kapan saja dengan menghubungi WhatsApp resmi atau mengirim email ke <a href={`mailto:${BRAND.email}`} class="text-gold-700 underline">{BRAND.email}</a>.
+          Sesuai ketentuan UU PDP, Anda berhak meminta pembaruan data, koreksi informasi, maupun penghapusan total riwayat kontak Anda dari database platform kami kapan saja dengan menghubungi WhatsApp resmi atau mengirim email permohonan ke <a href={`mailto:${BRAND.email}`} class="text-gold-700 underline font-mono">{BRAND.email}</a>.
         </p>
       </div>
 

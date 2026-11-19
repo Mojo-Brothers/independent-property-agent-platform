@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 import { DEMO_PROPERTIES } from '../data/mockProperties';
 
 export const GET: APIRoute = async () => {
-  const baseUrl = 'https://robbyvioryfansya.pages.dev';
+  const baseUrl = 'https://ivorygraceproperty.pages.dev';
 
   const staticPages = [
     '',

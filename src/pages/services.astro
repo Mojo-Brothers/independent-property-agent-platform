@@ -5,102 +5,120 @@ import { BRAND } from '../lib/constants';
 const services = [
   {
     number: '01',
+    id: 'developer-partnership',
     title: 'Developer Marketing Partnership',
     subtitle: 'Kemitraan Strategis Pemasaran Pengembang',
-    description: 'Bentuk kerja sama formal dengan pengembang perumahan atau cluster untuk mempercepat tingkat penyerapan unit. Mencakup penyusunan strategi pemasaran, distribusi informasi proyek, penyaringan prospek calon pembeli, serta koordinasi jadwal survey lokasi bersama tim sales in-house developer.',
-    points: ['Model Co-Brokering atau Exclusive Agent', 'Pelaporan prospek lead transparan', 'Sinergi promosi digital terintegrasi'],
+    description: 'Format kerja sama formal dengan pengembang perumahan atau kawasan cluster untuk mempercepat tingkat penyerapan unit. Mencakup perancangan strategi pemasaran digital, kurasi materi penawaran, penyaringan prospek calon pembeli, serta sinkronisasi jadwal survey bersama tim sales in-house developer.',
+    points: ['Skema Exclusive Marketing Agent atau Co-Brokering', 'Sistem pelaporan prospek leads CRM transparan', 'Sinergi kampanye promosi digital terintegrasi'],
   },
   {
     number: '02',
-    title: 'New Property & Cluster Marketing',
-    subtitle: 'Pemasaran Proyek Perumahan Baru & Indent',
-    description: 'Penyajian dan promosi proyek residensial baru mulai dari tahap pre-launching hingga pembangunan fisik. Mengedukasi calon pembeli mengenai masterplan kawasan, tahapan serah terima, fasilitas perumahan, dan simulasi skema angsuran developer maupun perbankan.',
-    points: ['Penyampaian masterplan & siteplan komprehensif', 'Edukasi tahapan pembangunan & serah terima', 'Informasi promo DP 0% & subsidi biaya KPR'],
+    id: 'property-owners',
+    title: 'Property Owners Advisory',
+    subtitle: 'Penasihat & Pemasaran Aset Pemilik Properti',
+    description: 'Layanan representasi eksklusif bagi pemilik aset properti perorangan maupun institusi yang ingin memasarkan unit hunian premium, ruko komersial, atau kavling tanah. Menghindari perang harga dan listing liar dengan menetapkan nilai pasar wajar dan pendekatan editorial.',
+    points: ['Comparative Market Analysis (CMA) berbasis data pasar riil', 'Penyaringan calon pembeli terverifikasi & bebas spekulan', 'Pendampingan administrasi legalitas & notaris/PPAT tuntas'],
   },
   {
     number: '03',
-    title: 'Ready Stock Marketing',
-    subtitle: 'Akselerasi Penjualan Unit Siap Huni',
-    description: 'Fokus pada unit-unit yang telah selesai dibangun (ready stock) baik dari sisa unit developer maupun cluster yang siap langsung ditempati. Membantu pembeli yang membutuhkan kepastian fisik bangunan dan percepatan proses akad KPR instan.',
-    points: ['Inspeksi kondisi fisik bangunan', 'Pengecekan kesiapan utilitas listrik & air', 'Percepatan proses appraisal bank untuk KPR siap huni'],
+    id: 'new-property',
+    title: 'New Property & Cluster Marketing',
+    subtitle: 'Pemasaran Proyek Perumahan Baru & Indent',
+    description: 'Penyajian dan promosi proyek residensial baru mulai dari tahap pre-launching hingga progres pembangunan fisik. Memberikan edukasi menyeluruh kepada calon pembeli mengenai masterplan kawasan, tahapan serah terima, spesifikasi teknis, serta simulasi pembiayaan.',
+    points: ['Penyampaian masterplan & siteplan komprehensif', 'Edukasi tahapan pembangunan & serah terima fisik', 'Informasi program promo DP dan subsidi biaya KPR resmi'],
   },
   {
     number: '04',
-    title: 'Residential Property Advisory',
-    subtitle: 'Konsultasi Pencarian Hunian Keluarga',
-    description: 'Pendampingan objektif bagi keluarga dan profesional yang mencari rumah tinggal pertama atau upgrade tempat tinggal. Menyelaraskan faktor jarak tempuh kerja, akses jalan tol/LRT, ketersediaan fasilitas pendidikan/kesehatan dengan alokasi budget keluarga.',
-    points: ['Analisis komparasi nilai antar-cluster', 'Pemeriksaan akses transportasi & bebas banjir', 'Pendampingan survey langsung ke lokasi'],
+    id: 'ready-stock',
+    title: 'Ready Stock Marketing',
+    subtitle: 'Akselerasi Penjualan Unit Siap Huni',
+    description: 'Fokus pada unit-unit yang telah selesai dibangun (ready stock) baik dari portofolio pengembang maupun cluster yang siap langsung ditempati. Membantu pembeli yang membutuhkan kepastian fisik bangunan dan percepatan proses akad KPR instan.',
+    points: ['Inspeksi kondisi fisik bangunan secara cermat', 'Pengecekan utilitas listrik, air, dan kesiapan lingkungan', 'Percepatan proses appraisal perbankan untuk KPR ready unit'],
   },
   {
     number: '05',
-    title: 'Secondary Property Marketing',
-    subtitle: 'Pemasaran Properti Sekunder / Rumah Bekas Terawat',
-    description: 'Membantu pemilik properti perorangan yang ingin menjual rumah terawat di kawasan pemukiman mapan (Kemang Pratama, Grand Wisata, Harapan Indah). Menangani penetapan harga pasar wajar, pemfilteran calon pembeli serius, hingga pendampingan ke notaris/PPAT.',
-    points: ['Estimasi harga pasar wajar (Comparative Market Analysis)', 'Verifikasi keabsahan sertifikat (SHM/HGB)', 'Pendampingan penyusunan Akta Jual Beli (AJB)'],
+    id: 'residential-advisory',
+    title: 'Residential & Commercial Advisory',
+    subtitle: 'Konsultasi Pencarian Hunian & Aset Usaha',
+    description: 'Pendampingan objektif bagi keluarga dan pelaku usaha yang mencari rumah tinggal atau ruko komersial. Menyelaraskan faktor aksesibilitas (jalan tol/LRT), ketersediaan fasilitas publik, reputasi pengembang, dengan alokasi budget finansial keluarga.',
+    points: ['Analisis komparasi nilai antar-kawasan cluster', 'Pemeriksaan akses bebas banjir & keamanan lingkungan', 'Pendampingan survey langsung ke lokasi proyek'],
   },
   {
     number: '06',
-    title: 'Buyer Acquisition & Lead Qualification',
-    subtitle: 'Akuisisi Calon Pembeli Berkualitas',
-    description: 'Metodologi penyaringan prospek secara ketat melalui inquiry funnel digital. Memastikan setiap calon pembeli yang dihubungkan ke pihak pengembang atau pemilik unit memiliki kapasitas finansial yang realistis dan kesiapan administratif perbankan.',
-    points: ['Pra-kualifikasi kesiapan BI Checking / SLIK', 'Penyaringan indikator budget & urgensi pembelian', 'Penjadwalan janji temu survey terkonfirmasi'],
+    id: 'secondary-property',
+    title: 'Secondary Property Representation',
+    subtitle: 'Pemasaran Properti Sekunder Terawat',
+    description: 'Membantu pemilik properti dalam memasarkan rumah terawat di kawasan hunian mapan (seperti Kemang Pratama, Grand Wisata, Harapan Indah). Menjamin penyajian visual berkelas, verifikasi keabsahan sertifikat, hingga tahap penandatanganan Akta Jual Beli (AJB).',
+    points: ['Estimasi harga pasar wajar berorientasi transaksi riil', 'Verifikasi keabsahan sertifikat kepemilikan (SHM/HGB)', 'Pendampingan proses transaksi di hadapan Notaris/PPAT'],
   },
   {
     number: '07',
-    title: 'Digital Property Campaign',
+    id: 'buyer-acquisition',
+    title: 'Buyer Acquisition & Lead Qualification',
+    subtitle: 'Akuisisi Calon Pembeli Berkualitas',
+    description: 'Metodologi penyaringan prospek secara terarah melalui inquiry funnel digital. Memastikan setiap calon pembeli yang dihubungkan ke pihak pengembang atau pemilik unit memiliki kapasitas finansial yang realistis dan kesiapan administratif perbankan.',
+    points: ['Pra-kualifikasi kesiapan SLIK OJK / perbankan', 'Penyaringan indikator budget & urgensi kebutuhan hunian', 'Penjadwalan janji temu survey terkonfirmasi'],
+  },
+  {
+    number: '08',
+    id: 'digital-campaign',
+    title: 'Digital Campaign & Editorial Presentation',
     subtitle: 'Kampanye Pemasaran Digital Terukur',
-    description: 'Pemanfaatan instrumen digital mutakhir untuk menjangkau segmen pasar yang tepat. Mengombinasikan visual showcase resolusi tinggi, platform web berkecepatan edge, targeted ads, serta optimasi kata kunci pencarian properti regional Bekasi dan Cikarang.',
-    points: ['Platform website modern berbasis SEO', 'Visual presentation & digital brochure distribution', 'Pencatatan database prospek berbasis CRM'],
+    description: 'Pemanfaatan instrumen digital mutakhir untuk menjangkau segmen pasar yang tepat. Mengombinasikan visual showcase resolusi tinggi bernuansa editorial, platform web berkecepatan edge, targeted ads, serta optimasi kata kunci pencarian properti regional.',
+    points: ['Platform website modern dengan optimasi performa tinggi', 'Visual presentation & digital brochure distribution', 'Pencatatan database prospek berbasis CRM terpadu'],
   },
 ];
 ---
 
 <BaseLayout
-  title={`Layanan Pemasaran Properti – ${BRAND.name}`}
-  description={`Layanan profesional pemasaran properti oleh Robby Viory Fansya: Developer Marketing Partnership, Ready Stock, Residential Advisory, Secondary Property, dan Digital Performance Campaign.`}
+  title={`Layanan Pemasaran & Penasihat Properti – ${BRAND.name}`}
+  description={`Rangkaian layanan profesional ${BRAND.name}: Developer Marketing Partnership, Property Owners Advisory, Ready Stock, Residential Advisory, dan Digital Campaign.`}
 >
   <!-- Header -->
   <section class="bg-navy-950 text-white py-16 border-b border-navy-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
         <span class="text-xs font-semibold uppercase tracking-widest text-gold-400">
-          Solusi & Kapabilitas
+          Our Services &amp; Capabilities
         </span>
-        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mt-2">
-          Layanan Profesional Pemasaran Properti
+        <h1 class="text-3xl sm:text-4xl font-serif font-extrabold tracking-tight text-white mt-2">
+          Layanan Profesional Pemasaran &amp; Penasihat Properti
         </h1>
-        <p class="text-slate-300 text-sm sm:text-base mt-3 leading-relaxed">
-          Rangkaian layanan terpadu yang dirancang untuk menjawab kebutuhan pengembang properti, investor hunian, serta calon pembeli di koridor Bekasi dan Cikarang.
+        <p class="text-slate-300 text-sm sm:text-base mt-3 leading-relaxed font-light">
+          Rangkaian solusi terpadu yang dirancang untuk menjawab kebutuhan pengembang properti, pemilik aset, investor, serta calon pembeli di koridor strategis Jabodetabek.
         </p>
       </div>
     </div>
   </section>
 
   <!-- Service Cards Grid -->
-  <section class="py-16 bg-slate-50">
+  <section class="py-16 bg-[#FAF9F5]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((item) => (
-          <div class="bg-white rounded-2xl p-8 border border-slate-200/80 shadow-sm hover:shadow-card-elevated hover:border-gold-400/50 transition-all duration-300 flex flex-col justify-between">
+          <div
+            id={item.id}
+            class="bg-white rounded-2xl p-8 border border-slate-200/80 shadow-sm hover:shadow-card-elevated hover:border-gold-400/50 transition-all duration-300 flex flex-col justify-between"
+          >
             <div>
               <div class="flex items-center justify-between mb-4">
-                <span class="text-2xl font-black text-navy-950/20 group-hover:text-gold-500/40 font-mono">
+                <span class="text-2xl font-serif font-bold text-navy-950/20 font-mono">
                   {item.number}
                 </span>
-                <span class="w-8 h-8 rounded-lg bg-navy-950 text-gold-400 flex items-center justify-center text-xs font-bold">
+                <span class="w-8 h-8 rounded-lg bg-navy-950 text-gold-400 flex items-center justify-center text-xs font-bold font-serif">
                   ✓
                 </span>
               </div>
               
-              <h3 class="text-lg font-bold text-navy-950 mb-1">
+              <h3 class="text-lg font-serif font-bold text-navy-950 mb-1">
                 {item.title}
               </h3>
               <p class="text-xs font-semibold text-gold-700 uppercase tracking-wider mb-3">
                 {item.subtitle}
               </p>
               
-              <p class="text-xs text-slate-600 leading-relaxed mb-6">
+              <p class="text-xs text-slate-600 leading-relaxed mb-6 font-light">
                 {item.description}
               </p>
             </div>
@@ -123,25 +141,25 @@ const services = [
       </div>
 
       <!-- Action Box -->
-      <div class="mt-16 bg-navy-950 text-white rounded-2xl p-8 sm:p-10 border border-gold-400/30 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="mt-16 bg-navy-950 text-white rounded-2xl p-8 sm:p-10 border border-gold-400/30 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
         <div>
-          <h3 class="text-xl font-bold">Tertarik Bermitra atau Membutuhkan Bantuan Pemasaran?</h3>
-          <p class="text-xs text-slate-300 mt-1">
-            Diskusikan kebutuhan proyek Anda bersama Robby Viory Fansya secara langsung.
+          <h3 class="text-xl font-serif font-bold">Tertarik Bermitra atau Membutuhkan Konsultasi Pemasaran?</h3>
+          <p class="text-xs text-slate-300 mt-1 font-light">
+            Diskusikan kebutuhan proyek pengembang atau aset properti Anda bersama Tim {BRAND.name}.
           </p>
         </div>
         <div class="flex flex-wrap gap-3 flex-shrink-0">
           <a
             href="/developer-partnership"
-            class="px-5 py-3 rounded-lg bg-gold-400 hover:bg-gold-300 text-navy-950 font-bold text-xs shadow-sm transition-all"
+            class="px-5 py-3 rounded-lg bg-gold-400 hover:bg-gold-300 text-navy-950 font-bold text-xs uppercase tracking-wider shadow-sm transition-all"
           >
-            Formulir Kemitraan Developer
+            Formulir Kemitraan
           </a>
           <a
-            href={`https://wa.me/${BRAND.whatsapp}?text=Halo%20Bpk.%20Robby,%20saya%20ingin%20berdiskusi%20tentang%20layanan%20pemasaran%20properti`}
+            href={`https://wa.me/${BRAND.whatsapp}?text=Halo%20Tim%20Ivory%20%26%20Grace%20Property,%20kami%20ingin%20berdiskusi%20tentang%20layanan%20pemasaran%20properti`}
             target="_blank"
             rel="noopener noreferrer"
-            class="px-5 py-3 rounded-lg bg-navy-900 hover:bg-navy-850 text-white border border-navy-700 text-xs font-semibold transition-all"
+            class="px-5 py-3 rounded-lg bg-navy-900 hover:bg-navy-850 text-white border border-navy-700 text-xs uppercase tracking-wider font-semibold transition-all"
           >
             Konsultasi WhatsApp
           </a>

@@ -1,5 +1,5 @@
 # ENVIRONMENT VARIABLES SPECIFICATION
-## Robby Viory Fansya – Independent Property Agent Platform
+## IVORY & GRACE PROPERTY – Property Marketing & Advisory Platform
 
 File acuan template: `.env.example`.  
 File konfigurasi lokal: `.env` (diabaikan oleh Git via `.gitignore`).
@@ -15,11 +15,11 @@ Variabel dengan awalan `PUBLIC_` dapat dibaca oleh Astro di sisi browser klien d
 | `PUBLIC_SUPABASE_URL` | URL | Ya (untuk Supabase) | `https://xyzproject.supabase.co` | Endpoint REST API Supabase |
 | `PUBLIC_SUPABASE_ANON_KEY` | JWT String | Ya (untuk Supabase) | `eyJhbGciOiJIUzI1NiIsInR5cCI6...` | Public Anonymous Client Key yang dilindungi oleh RLS |
 | `PUBLIC_TURNSTILE_SITE_KEY` | String | Opsional | `0x4AAAAAAABcDeFgHiJkLm` | Site Key Cloudflare Turnstile bot protection |
-| `PUBLIC_AGENT_NAME` | String | Default: `Robby Viory Fansya` | `Robby Viory Fansya` | Nama resmi pemilik platform |
-| `PUBLIC_AGENT_TITLE` | String | Default: `Independent Property Agent` | `Independent Property Agent` | Gelar profesional |
+| `PUBLIC_AGENT_NAME` | String | Default: `IVORY & GRACE PROPERTY` | `IVORY & GRACE PROPERTY` | Nama brand entitas bisnis |
+| `PUBLIC_AGENT_TITLE` | String | Default: `Property Marketing & Advisory` | `Property Marketing & Advisory` | Kategori bisnis |
 | `PUBLIC_WHATSAPP_NUMBER` | String | Format internasional | `6281280000000` | Nomor WhatsApp kontak utama (tanpa tanda +) |
-| `PUBLIC_OFFICIAL_EMAIL` | Email | Default: `info@robbyproperty.com` | `contact@robbyproperty.com` | Email korespondensi resmi |
-| `PUBLIC_SITE_URL` | URL | Default: Pages.dev | `https://robbyvioryfansya.pages.dev` | Basis URL kanonikal & sitemap |
+| `PUBLIC_OFFICIAL_EMAIL` | Email | Default: `advisory@ivorygraceproperty.com` | `advisory@ivorygraceproperty.com` | Email korespondensi resmi |
+| `PUBLIC_SITE_URL` | URL | Default: Pages.dev | `https://ivorygraceproperty.pages.dev` | Basis URL kanonikal & sitemap |
 
 ---
 

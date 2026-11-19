@@ -1,22 +1,25 @@
-# ROBBY VIORY FANSYA – INDEPENDENT PROPERTY AGENT (IPA)
-## Digital Business Platform & Corporate Marketing Portal
+# IVORY & GRACE PROPERTY
+## Property Marketing & Advisory Platform
+*Lini Bisnis di Bawah Naungan Parent Brand IVORY & GRACE*
 
-Platform bisnis digital, katalog portofolio perumahan, dan sistem CRM pemasaran properti mandiri milik **Robby Viory Fansya** sebagai *Independent Property Agent (IPA)* yang berfokus pada koridor strategis **Kota Bekasi, Kabupaten Bekasi, Cikarang, Grand Wisata, dan sekitarnya**.
+Platform bisnis digital, katalog portofolio properti kurasi, dan sistem CRM penasihat properti milik **IVORY & GRACE PROPERTY** (*Property Marketing & Advisory*) yang berfokus pada koridor strategis **Kota Bekasi, Kabupaten Bekasi, Cikarang, Grand Wisata, dan koridor pertumbuhan Jabodetabek**.
+
+Tagline: *"Connecting Properties with Opportunities."*
 
 ---
 
 ## 🌟 FITUR UTAMA SISTEM
 
 ### A. Public Website (Portal Publik)
-* **Beranda (`/`):** Hero korporat elegan, identitas Independent Property Agent, area of expertise Bekasi–Cikarang, featured properties, skema kemitraan developer, dan floating WhatsApp CTA.
-* **Tentang Robby (`/about`):** Profil profesional, filosofi kerja *evidence-based*, arsitektur pemasaran digital, serta visi kemitraan tanpa klaim fiktif.
-* **Layanan (`/services`):** 7 pilar layanan pemasaran properti (Developer Partnership, New Property, Ready Stock, Residential Advisory, Secondary Property, Buyer Acquisition, Digital Campaign).
-* **Katalog Listing Properti (`/properties`):** Filter multi-parameter dinamis (Wilayah, Tipe Properti, Rentang Budget, Kata Kunci).
+* **Beranda (`/`):** Hero korporat bernuansa editorial, identitas Property Marketing & Advisory, area of expertise koridor strategis, portofolio pilihan, skema kemitraan developer & pemilik properti, dan floating WhatsApp CTA.
+* **Tentang Kami (`/about`):** Profil korporat About Our Company, filosofi kerja *evidence-based*, arsitektur pemasaran digital, tata kelola brand di bawah naungan IVORY & GRACE, serta komitmen kredibilitas tanpa klaim fiktif.
+* **Layanan (`/services`):** 8 pilar layanan terpadu (Developer Marketing Partnership, Property Owners Advisory, New Property, Ready Stock, Residential & Commercial Advisory, Secondary Property Representation, Buyer Acquisition, Digital Campaign).
+* **Katalog Portofolio Properti (`/properties`):** Filter multi-parameter dinamis (Wilayah, Tipe Properti, Rentang Budget, Kata Kunci).
 * **Detail Properti (`/properties/[slug]`):** Galeri foto interaktif, spesifikasi teknis lengkap (LT/LB, KT/KM, Listrik, Air, Legalitas), matriks ketersediaan unit fisik (Available/Reserved/Sold), tanggal verifikasi inventori, dan modal inquiry.
-* **Kemitraan Pengembang (`/developer-partnership`):** Media presentasi resmi bagi pengembang (misal: PT Pos Properti Indonesia & developer cluster), penjelasan model Co-Brokering / Exclusive Agency, alur kerja sama, dan formulir aplikasi kemitraan.
-* **Kontak (`/contact`):** Saluran WhatsApp, email resmi, jam operasional, peta area, dan formulir konsultasi langsung.
+* **Kemitraan Pengembang (`/developer-partnership`):** Media presentasi resmi bagi pengembang dan pemilik properti, penjelasan model Co-Brokering / Exclusive Agency, alur kerja sama, dan formulir aplikasi kemitraan.
+* **Kontak Tim (`/contact`):** Saluran WhatsApp, email resmi (`advisory@ivorygraceproperty.com`), jam operasional, hub lokasi, dan formulir konsultasi terarah.
 * **Legalitas & Kepatuhan:** Kebijakan Privasi (UU PDP No. 27/2022), Syarat & Ketentuan Layanan, serta Disclaimer Listing & Harga Properti.
-* **SEO & Sinyal Mesin Pencari:** `sitemap.xml`, `robots.txt`, OpenGraph meta tags, Canonical URLs, dan Schema.org `RealEstateAgent` JSON-LD.
+* **SEO & Sinyal Mesin Pencari:** `sitemap.xml`, `robots.txt`, OpenGraph meta tags, Canonical URLs, dan Schema.org `RealEstateAgent` JSON-LD dengan parentOrganization.
 
 ### B. Admin Dashboard & CRM System (`/admin`)
 * **Portal Login Tertutup (`/admin/login`):** Keamanan tinggi tanpa registrasi publik (registrasi publik dinonaktifkan).

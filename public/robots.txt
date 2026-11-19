@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /api/
 
-Sitemap: https://robbyvioryfansya.pages.dev/sitemap.xml
+Sitemap: https://ivorygraceproperty.pages.dev/sitemap.xml

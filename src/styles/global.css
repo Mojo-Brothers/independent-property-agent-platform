@@ -8,42 +8,42 @@
   html {
     scroll-behavior: smooth;
     font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-    color: #0F172A;
-    background-color: #F8FAFC;
+    color: #181A1E;
+    background-color: #FAF9F5;
   }
 
   ::selection {
-    background-color: #D4AF37;
-    color: #0A192F;
+    background-color: #C5A880;
+    color: #0F1012;
   }
 }
 
 @layer utilities {
   .text-gold-gradient {
-    background: linear-gradient(135deg, #DFD09E 0%, #D4AF37 50%, #A88340 100%);
+    background: linear-gradient(135deg, #E5D3B3 0%, #C5A880 50%, #9B7E56 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   .bg-navy-gradient {
-    background: linear-gradient(180deg, #060D1A 0%, #0A192F 50%, #0E213D 100%);
+    background: linear-gradient(180deg, #0F1012 0%, #181A1E 50%, #23262B 100%);
   }
 
   .border-gold-subtle {
-    border-color: rgba(212, 175, 55, 0.25);
+    border-color: rgba(197, 168, 128, 0.25);
   }
 
   .glass-panel {
-    background: rgba(10, 25, 47, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    background: rgba(24, 26, 30, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(197, 168, 128, 0.22);
   }
 
   .glass-card-light {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(253, 251, 247, 0.92);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(226, 232, 240, 0.8);
+    border: 1px solid rgba(226, 222, 213, 0.8);
   }
 }

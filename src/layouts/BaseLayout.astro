@@ -13,15 +13,15 @@ interface Props {
 }
 
 const {
-  title = `${BRAND.name} – ${BRAND.title} | Spesialis Properti Bekasi & Cikarang`,
-  description = `${BRAND.tagline}. Portofolio kemitraan developer dan katalog perumahan baru, cluster, ready stock, serta properti sekunder di koridor strategis Bekasi–Cikarang.`,
+  title = `${BRAND.name} – ${BRAND.tagline} | ${BRAND.category}`,
+  description = `${BRAND.name} merupakan lini bisnis pemasaran dan penasihat properti terkurasi di bawah naungan brand ${BRAND.parentBrand}. Menghubungkan pengembang properti, pemilik aset, investor, dan pembeli melalui layanan pemasaran yang profesional dan transparan.`,
   image = 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
   type = 'website',
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://robbyvioryfansya.pages.dev');
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://ivorygraceproperty.pages.dev');
 
-// Structured Data (JSON-LD) for RealEstateAgent / Independent Property Agent
+// Structured Data (JSON-LD) for Corporate Property Marketing & Advisory
 const schemaData = {
   '@context': 'https://schema.org',
   '@type': 'RealEstateAgent',
@@ -30,6 +30,10 @@ const schemaData = {
   url: canonicalURL.toString(),
   telephone: BRAND.phone,
   email: BRAND.email,
+  parentOrganization: {
+    '@type': 'Organization',
+    name: BRAND.parentBrand,
+  },
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Bekasi',
@@ -43,8 +47,9 @@ const schemaData = {
     'Grand Wisata Tambun',
     'Summarecon Bekasi',
     'Harapan Indah',
+    'Koridor Jabodetabek',
   ],
-  priceRange: 'Rp 500 Juta - Rp 5 Miliar',
+  priceRange: 'Rp 500 Juta - Rp 10 Miliar',
 };
 ---
 
@@ -80,7 +85,7 @@ const schemaData = {
     <!-- Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
   </head>
-  <body class="min-h-screen flex flex-col bg-slate-50 text-slate-900 antialiased selection:bg-gold-400 selection:text-navy-950">
+  <body class="min-h-screen flex flex-col bg-[#FAF9F5] text-charcoal-900 antialiased selection:bg-gold-400 selection:text-charcoal-950">
     <Header />
     <main class="flex-grow">
       <slot />

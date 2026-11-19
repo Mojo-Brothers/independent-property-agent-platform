@@ -7,7 +7,7 @@ interface Props {
   activeNav?: string;
 }
 
-const { title = 'Admin Dashboard – IPA Platform', activeNav = 'overview' } = Astro.props;
+const { title = `Admin Portal – ${BRAND.name}`, activeNav = 'overview' } = Astro.props;
 
 const currentPath = Astro.url.pathname;
 
@@ -39,25 +39,25 @@ const adminNavItems = [
       <div>
         <!-- Sidebar Brand Header -->
         <div class="h-20 flex items-center px-6 border-b border-navy-800 space-x-3">
-          <div class="w-9 h-9 rounded-lg bg-navy-900 border border-gold-400/40 flex items-center justify-center text-gold-400 font-bold text-xs">
-            IPA
+          <div class="w-9 h-9 rounded-lg bg-navy-900 border border-gold-400/40 flex items-center justify-center text-gold-400 font-bold text-xs tracking-wider">
+            I&amp;G
           </div>
-          <div>
-            <span class="block text-sm font-bold text-white tracking-wide">{BRAND.name}</span>
-            <span class="block text-[10px] text-gold-400 font-medium uppercase tracking-wider">Admin Portal</span>
+          <div class="overflow-hidden">
+            <span class="block text-xs font-bold text-white tracking-wide truncate">{BRAND.name}</span>
+            <span class="block text-[10px] text-gold-400 font-medium uppercase tracking-wider">Advisory Portal</span>
           </div>
         </div>
 
-        <!-- Navigation Links -->
+        <!-- Sidebar Navigation -->
         <nav class="p-4 space-y-1">
           {adminNavItems.map((item) => {
-            const isActive = activeNav === item.id || currentPath === item.href;
+            const isActive = activeNav === item.id;
             return (
               <a
                 href={item.href}
-                class={`flex items-center px-3.5 py-2.5 rounded-lg text-xs font-semibold transition-all ${
+                class={`flex items-center px-3.5 py-2.5 rounded-lg text-xs font-medium transition-colors ${
                   isActive
-                    ? 'bg-navy-900 text-gold-400 border border-gold-400/30'
+                    ? 'bg-navy-900 text-gold-400 border border-gold-400/30 font-semibold'
                     : 'text-slate-300 hover:bg-navy-900/60 hover:text-white'
                 }`}
               >
@@ -74,17 +74,17 @@ const adminNavItems = [
         <div class="flex items-center justify-between">
           <div class="flex items-center space-x-2">
             <div class="w-8 h-8 rounded-full bg-gold-400/20 text-gold-400 flex items-center justify-center font-bold text-xs">
-              R
+              IG
             </div>
             <div class="text-xs">
-              <span class="block font-bold text-white leading-tight">Robby Viory F.</span>
-              <span class="block text-[10px] text-slate-400">Super Admin</span>
+              <span class="block font-bold text-white leading-tight">Ivory & Grace</span>
+              <span class="block text-[10px] text-slate-400">Advisory Team</span>
             </div>
           </div>
           <button
             type="button"
             id="admin-logout-btn"
-            class="text-[11px] text-rose-400 hover:text-rose-300 font-semibold px-2 py-1 rounded hover:bg-navy-900"
+            class="text-[11px] text-rose-400 hover:text-rose-300 font-semibold px-2 py-1 rounded hover:bg-navy-900 transition-colors"
             title="Keluar dari sesi admin"
           >
             Keluar
@@ -115,12 +115,13 @@ const adminNavItems = [
         </div>
       </header>
 
-      <!-- Page Body Slot -->
-      <main class="p-6 sm:p-8 flex-1 overflow-y-auto">
+      <!-- Main Slot Content -->
+      <main class="flex-1 p-6 sm:p-8 bg-slate-50 overflow-y-auto">
         <slot />
       </main>
 
     </div>
+
   </body>
 </html>
 
@@ -131,7 +132,7 @@ const adminNavItems = [
       try {
         await fetch('/api/auth/logout', { method: 'POST' });
         window.location.href = '/admin/login';
-      } catch (e) {
+      } catch (err) {
         window.location.href = '/admin/login';
       }
     });

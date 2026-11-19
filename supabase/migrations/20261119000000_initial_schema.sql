@@ -1,5 +1,5 @@
 -- ==============================================================================
--- ROBBY VIORY FANSYA - INDEPENDENT PROPERTY AGENT (IPA) DIGITAL PLATFORM
+-- IVORY & GRACE PROPERTY - PROPERTY MARKETING & ADVISORY DIGITAL PLATFORM
 -- INITIAL DATABASE SCHEMA & ROW LEVEL SECURITY (RLS) POLICIES
 -- Target DB: PostgreSQL 15+ (Supabase)
 -- ==============================================================================

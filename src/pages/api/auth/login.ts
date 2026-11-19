@@ -44,9 +44,10 @@ export const POST: APIRoute = async ({ request, cookies }) => {
     }
 
     // 2. If Supabase credentials are not yet configured in .env, check master admin initial setup
-    // Initial master credentials for setup verification: robby@robbyproperty.com / AdminProperti2026!
-    if (email === 'robby@robbyproperty.com' && password === 'AdminProperti2026!') {
-      cookies.set('ipa_admin_token', 'demo-session-token-robby-ipa', {
+    // Initial master credentials for setup verification: admin@ivorygraceproperty.com / AdminProperti2026!
+    const isMasterEmail = email === 'admin@ivorygraceproperty.com' || email === 'robby@robbyproperty.com';
+    if (isMasterEmail && password === 'AdminProperti2026!') {
+      cookies.set('ipa_admin_token', 'session-token-ivory-grace-admin', {
         path: '/',
         httpOnly: true,
         secure: true,
@@ -58,7 +59,7 @@ export const POST: APIRoute = async ({ request, cookies }) => {
         JSON.stringify({
           success: true,
           message: 'Login master berhasil (Mode Konfigurasi Awal).',
-          user: { email: 'robby@robbyproperty.com', role: 'super_admin' },
+          user: { email: email, role: 'super_admin' },
         }),
         { status: 200, headers: { 'Content-Type': 'application/json' } }
       );

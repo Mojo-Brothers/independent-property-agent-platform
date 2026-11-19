@@ -1,23 +1,27 @@
 export const BRAND = {
-  name: 'Robby Viory Fansya',
-  title: 'Independent Property Agent',
-  company: 'Robby Viory Fansya Property Advisory',
-  tagline: 'Mitra Strategis Pemasaran Properti & Solusi Investasi Hunian Terpercaya',
-  area: 'Bekasi Kota, Kabupaten Bekasi, Cikarang & Sekitarnya',
-  phone: '0812-8000-0000', // Default placeholder changeable in settings/dashboard
+  name: 'IVORY & GRACE PROPERTY',
+  brandName: 'IVORY & GRACE PROPERTY',
+  parentBrand: 'IVORY & GRACE',
+  category: 'Property Marketing & Advisory',
+  title: 'Property Marketing & Advisory',
+  company: 'IVORY & GRACE PROPERTY',
+  tagline: 'Connecting Properties with Opportunities.',
+  area: 'Bekasi Kota, Kabupaten Bekasi, Cikarang & Koridor Strategis Jabodetabek',
+  phone: '0812-8000-0000', // Nomor kontak operasional
   whatsapp: '6281280000000',
-  email: 'info@robbyproperty.com',
+  email: 'advisory@ivorygraceproperty.com',
   address: 'Bekasi Digital Business Hub, Kota Bekasi, Jawa Barat, Indonesia',
-  disclaimerShort: 'Informasi harga, spesifikasi, dan ketersediaan unit dapat berubah sewaktu-waktu sesuai konfirmasi pihak pengembang/pemilik unit.',
+  disclaimerShort: 'Informasi harga, spesifikasi, dan ketersediaan unit bersifat indikatif dan dapat berubah sewaktu-waktu sesuai konfirmasi pihak pengembang / pemilik unit.',
 };
 
 export const NAV_LINKS = [
   { label: 'Beranda', href: '/' },
-  { label: 'Tentang Robby', href: '/about' },
+  { label: 'Tentang Kami', href: '/about' },
   { label: 'Layanan', href: '/services' },
-  { label: 'Katalog Properti', href: '/properties' },
+  { label: 'Portofolio Properti', href: '/properties' },
   { label: 'Kemitraan Developer', href: '/developer-partnership' },
-  { label: 'Kontak', href: '/contact' },
+  { label: 'Pemilik Properti', href: '/services#property-owners' },
+  { label: 'Kontak Tim', href: '/contact' },
 ];
 
 export const PROPERTY_LOCATIONS = [

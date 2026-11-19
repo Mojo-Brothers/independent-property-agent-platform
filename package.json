@@ -1,7 +1,7 @@
 {
   "name": "independent-property-agent-platform",
   "version": "1.0.0",
-  "description": "Digital Business Platform & Portfolio for Robby Viory Fansya - Independent Property Agent",
+  "description": "Digital Business Platform for IVORY & GRACE PROPERTY - Property Marketing & Advisory",
   "type": "module",
   "scripts": {
     "dev": "astro dev",
@@ -17,9 +17,11 @@
     "@astrojs/tailwind": "^5.1.5",
     "@lucide/astro": "^1.76.0",
     "@supabase/supabase-js": "^2.48.1",
+    "@types/pg": "^8.23.1",
     "astro": "^5.3.0",
     "clsx": "^2.1.1",
     "lucide-astro": "^0.556.0",
+    "pg": "^8.23.1",
     "tailwind-merge": "^3.0.1",
     "typescript": "^5.7.3",
     "zod": "^3.24.2"

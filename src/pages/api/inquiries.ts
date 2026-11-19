@@ -74,7 +74,7 @@ export const POST: APIRoute = async ({ request }) => {
     return new Response(
       JSON.stringify({
         success: true,
-        message: 'Permintaan informasi berhasil terkirim. Bpk. Robby Viory Fansya akan segera menghubungi Anda melalui WhatsApp.',
+        message: 'Permintaan informasi berhasil terkirim. Tim Konsultan Ivory & Grace Property akan segera menghubungi Anda melalui WhatsApp.',
       }),
       { status: 200, headers: { 'Content-Type': 'application/json' } }
     );

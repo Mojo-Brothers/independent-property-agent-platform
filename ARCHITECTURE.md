@@ -1,5 +1,5 @@
 # SYSTEM ARCHITECTURE DOCUMENTATION
-## Robby Viory Fansya – Independent Property Agent Platform
+## IVORY & GRACE PROPERTY – Property Marketing & Advisory Platform
 
 **Document Version:** 1.0.0  
 **Target Environment:** Cloudflare Pages (Free Tier) + Supabase PostgreSQL (Free Tier)  

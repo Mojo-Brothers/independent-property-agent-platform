@@ -18,7 +18,7 @@ if (!token) {
       <form id="settings-form" class="mt-6 space-y-4">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label for="set-name" class="block text-xs font-semibold text-slate-700 mb-1">Nama Pemilik / Agen</label>
+            <label for="set-name" class="block text-xs font-semibold text-slate-700 mb-1">Nama Brand / Entitas Bisnis</label>
             <input
               type="text"
               id="set-name"
@@ -27,11 +27,11 @@ if (!token) {
             />
           </div>
           <div>
-            <label for="set-title" class="block text-xs font-semibold text-slate-700 mb-1">Gelar Profesional</label>
+            <label for="set-title" class="block text-xs font-semibold text-slate-700 mb-1">Kategori Bisnis</label>
             <input
               type="text"
               id="set-title"
-              value={BRAND.title}
+              value={BRAND.category}
               class="w-full px-3.5 py-2 border border-slate-300 rounded-lg text-xs text-slate-800 focus:ring-2 focus:ring-gold-400 outline-none"
             />
           </div>
@@ -87,14 +87,14 @@ if (!token) {
                 id="set-meta-desc"
                 rows="3"
                 class="w-full px-3.5 py-2 border border-slate-300 rounded-lg text-xs text-slate-700 focus:ring-2 focus:ring-gold-400 outline-none"
-              >Platform digital portofolio kemitraan developer dan katalog properti independen Robby Viory Fansya. Menghadirkan listing terverifikasi dan konsultasi hunian di Bekasi dan Cikarang.</textarea>
+              >Platform digital pemasaran dan konsultasi properti IVORY & GRACE PROPERTY di bawah naungan brand IVORY & GRACE. Menghubungkan pengembang, pemilik aset, investor, dan pembeli secara profesional & transparan.</textarea>
             </div>
             <div>
               <label for="set-canonical" class="block text-xs font-semibold text-slate-700 mb-1">Canonical Base URL</label>
               <input
                 type="url"
                 id="set-canonical"
-                value="https://robbyvioryfansya.pages.dev"
+                value="https://ivorygraceproperty.pages.dev"
                 class="w-full px-3.5 py-2 border border-slate-300 rounded-lg text-xs text-slate-700 font-mono focus:ring-2 focus:ring-gold-400 outline-none"
               />
             </div>
