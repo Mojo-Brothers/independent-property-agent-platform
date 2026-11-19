@@ -7,8 +7,8 @@ export const BRAND = {
   company: 'IVORY & GRACE PROPERTY',
   tagline: 'Connecting Properties with Opportunities.',
   area: 'Bekasi Kota, Kabupaten Bekasi, Cikarang & Koridor Strategis Jabodetabek',
-  phone: '0812-8000-0000', // Nomor kontak operasional
-  whatsapp: '6281280000000',
+  phone: '0895-3721-15913', // Nomor kontak operasional
+  whatsapp: '62895372115913',
   email: 'advisory@ivorygraceproperty.com',
   address: 'Bekasi Digital Business Hub, Kota Bekasi, Jawa Barat, Indonesia',
   disclaimerShort: 'Informasi harga, spesifikasi, dan ketersediaan unit bersifat indikatif dan dapat berubah sewaktu-waktu sesuai konfirmasi pihak pengembang / pemilik unit.',

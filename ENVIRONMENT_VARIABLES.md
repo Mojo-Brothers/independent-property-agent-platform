@@ -17,7 +17,7 @@ Variabel dengan awalan `PUBLIC_` dapat dibaca oleh Astro di sisi browser klien d
 | `PUBLIC_TURNSTILE_SITE_KEY` | String | Opsional | `0x4AAAAAAABcDeFgHiJkLm` | Site Key Cloudflare Turnstile bot protection |
 | `PUBLIC_AGENT_NAME` | String | Default: `IVORY & GRACE PROPERTY` | `IVORY & GRACE PROPERTY` | Nama brand entitas bisnis |
 | `PUBLIC_AGENT_TITLE` | String | Default: `Property Marketing & Advisory` | `Property Marketing & Advisory` | Kategori bisnis |
-| `PUBLIC_WHATSAPP_NUMBER` | String | Format internasional | `6281280000000` | Nomor WhatsApp kontak utama (tanpa tanda +) |
+| `PUBLIC_WHATSAPP_NUMBER` | String | Format internasional | `62895372115913` | Nomor WhatsApp kontak utama (tanpa tanda +) |
 | `PUBLIC_OFFICIAL_EMAIL` | Email | Default: `advisory@ivorygraceproperty.com` | `advisory@ivorygraceproperty.com` | Email korespondensi resmi |
 | `PUBLIC_SITE_URL` | URL | Default: Pages.dev | `https://ivorygraceproperty.pages.dev` | Basis URL kanonikal & sitemap |
 
